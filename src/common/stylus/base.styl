@@ -1,0 +1,42 @@
+body,html
+  line-height:1
+  font-weight 200
+  font-family 'PingFang SC','STHeitiSC-Light','Helvetica-Light',arial,sans-serif
+
+.is-active
+  color red
+.fl
+  float left
+
+.fr
+  float right
+.tl
+  text-align left
+.tr
+  text-align right
+.tc
+  text-align center
+.clearfix
+  display : inline-block
+  &:after
+    display block
+    content :"."
+    height 0
+    line-height 0
+    clear both
+    visibility :hidden
+
+.border_bottom
+  border-bottom 8px solid #f5f0f0
+
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+  .border-1px
+    &::after
+      -webkit-transform: scaleY(0.7)
+      transform: scaleY(0.7)
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+  .border-1px
+    &::after
+      -webkit-transform: scaleY(0.5)
+      transform: scaleY(0.5)
