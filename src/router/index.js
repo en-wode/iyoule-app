@@ -7,6 +7,7 @@ import feedback from '../views/personal/feedback'
 import personlv from '../views/personal/person_lv'
 import personvip from '../views/personal/person_vip'
 import home from '../views/home/home'
+import book from '../views/book/book'
 import bookcity from '../components/bookcity/bookcity'
 import detail from '../components/paihang/paihang-detail/detail'
 import classify from '../components/classify/classify'
@@ -58,6 +59,10 @@ let router = new VueRouter({
         {
           path: '/detail',
           component: detail
+        },
+        {
+          path: '/book',
+          component: book
         }
       ]
     },

@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<style lang="stylus" rel="stylesheet/stylus" type="text/stylus">
+<style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
 
 
 </style>
@@ -31,6 +31,11 @@
       'd-head': detail,
       'v-bottom': bottom,
       personal
+    },
+    methods: {
+      show () {
+
+      }
     }
   }
 </script>

@@ -52,7 +52,6 @@
       },
       methods: {
         toggle: function () {
-          alert(1)
           this.isShow = !this.isShow
           console.log(this.isShow)
         }
