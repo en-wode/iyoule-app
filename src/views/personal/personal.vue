@@ -1,5 +1,5 @@
 <template>
-  <div class="back">
+  <div class="back" @touchmove.prevent>
     <div class="personal">
       <div class="head border_bottom" >
         <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="82" height="82" @click="$router.push({path:'/profile',query:{bang:'proflie'}})">
@@ -15,13 +15,13 @@
       </div>
       <div class="border_bottom consume">
         <p @click="$router.push({path:'/person_lv',query:{bang:'person_lv'}})"><i class="icon-lv"></i>我的等级<i class="icon-arrow fr"></i></p>
-        <p><i class="icon-VIP"></i>vip等级<i class="icon-arrow"></i></p>
+        <p @click="$router.push({path:'/person_vip',query:{bang:'vip'}})"><i class="icon-VIP"></i>vip等级<i class="icon-arrow"></i></p>
       </div>
       <div class="border_bottom consume">
         <p><i class="icon-new"></i>消息中心<i class="icon-arrow"></i></p>
         <p><i class="icon-mybook"></i>我的书籍<i class="icon-arrow"></i></p>
-        <p><i class="icon-help"></i>帮助反馈<i class="icon-arrow"></i></p>
-        <p><i class="icon-person-data"></i>个人资料<i class="icon-arrow"></i></p>
+        <p @click="$router.push({path:'/feedback',query:{bang:'feedback'}})"><i class="icon-help"></i>帮助反馈<i class="icon-arrow"></i></p>
+        <p @click="$router.push({path:'/profile',query:{bang:'proflie'}})"><i class="icon-person-data"></i>个人资料<i class="icon-arrow"></i></p>
       </div>
       <div class="consume">
         <p><i class="icon-night"></i>开启夜间模式<i class="icon-set"></i></p>

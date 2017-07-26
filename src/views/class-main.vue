@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <personal></personal>
+    <!--<personal></personal>-->
     <d-head v-if="this.$route.query.bang"></d-head>
     <div v-else>
       <v-head v-if="this.$route.query.class"></v-head>

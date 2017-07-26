@@ -54,7 +54,10 @@
             reward: '打赏榜',
             proflie: '个人资料',
             recharge: '充值',
-            person_lv: '我的等级'
+            person_lv: '我的等级',
+            person_vip: '会员等级',
+            feedback: '帮助反馈',
+            content: '专题'
           }
         }
       },

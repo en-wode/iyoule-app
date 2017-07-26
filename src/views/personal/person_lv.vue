@@ -7,8 +7,25 @@
         <p class="lv">黑铁会员</p>
       </div>
       <div class="border_bottom consume">
-        <h3>当前等级福利</h3>
-        <div class="contain">鲜花</div>
+        <h3 class="red">当前等级福利</h3>
+        <div class="fuli_detail">
+          <p>鲜花</p>
+          <p class="flower">每日可送7朵鲜花</p>
+        </div>
+      </div>
+      <div class="border_bottom consume">
+        <h3>黑铁会员福利</h3>
+        <div class="fuli_detail">
+          <p>鲜花</p>
+          <p class="flower">每日可送7朵鲜花</p>
+        </div>
+      </div>
+      <div class="border_bottom consume">
+        <h3>白银会员福利</h3>
+        <div class="fuli_detail">
+          <p>鲜花</p>
+          <p class="flower">每日可送7朵鲜花</p>
+        </div>
       </div>
     </div>
   </div>
@@ -48,5 +65,12 @@
         line-height 28px
         margin 0 auto
         border-1px(rgba(245,240,240,0.9))
+      .fuli_detail
+        width 90%
+        margin 12px auto
+        .flower
+          margin-top 7px
+          color #b6a7a7
+
 
 </style>

@@ -3,13 +3,16 @@ import VueRouter from 'vue-router'
 import main from '../views/class-main'
 import profile from '../views/personal/profile'
 import recharge from '../views/personal/recharge'
+import feedback from '../views/personal/feedback'
 import personlv from '../views/personal/person_lv'
+import personvip from '../views/personal/person_vip'
 import home from '../views/home/home'
 import bookcity from '../components/bookcity/bookcity'
 import detail from '../components/paihang/paihang-detail/detail'
 import classify from '../components/classify/classify'
 import free from '../components/free/free'
 import topic from '../components/topic/topic'
+import topict from '../components/topic/topic-content'
 import Axios from 'axios'
 import '../common/stylus/index.styl'
 
@@ -41,6 +44,10 @@ let router = new VueRouter({
           component: topic
         },
         {
+          path: '/topic-content',
+          component: topict
+        },
+        {
           path: '/free',
           component: free
         },
@@ -65,6 +72,14 @@ let router = new VueRouter({
     {
       path: '/person_lv',
       component: personlv
+    },
+    {
+      path: '/person_vip',
+      component: personvip
+    },
+    {
+      path: '/feedback',
+      component: feedback
     }
   ]
 })
