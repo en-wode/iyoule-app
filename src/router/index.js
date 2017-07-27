@@ -7,6 +7,7 @@ import feedback from '../views/personal/feedback'
 import personlv from '../views/personal/person_lv'
 import personvip from '../views/personal/person_vip'
 import home from '../views/home/home'
+import comment from '../views/comment/comment'
 import book from '../views/book/book'
 import bookcity from '../components/bookcity/bookcity'
 import detail from '../components/paihang/paihang-detail/detail'
@@ -63,6 +64,10 @@ let router = new VueRouter({
         {
           path: '/book',
           component: book
+        },
+        {
+          path: '/comment',
+          component: comment
         }
       ]
     },

@@ -9,13 +9,41 @@
     <div class="contain">
       <router-view></router-view>
     </div>
-    <v-bottom></v-bottom>
+    <div class="bottom" v-if="this.$route.query.bang =='book'">
+      <li><span class="shidu">免费试读</span></li>
+      <li><span class="down">全本下载</span></li>
+    </div>
+    <v-bottom v-else></v-bottom>
   </div>
 </template>
 
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
-
-
+  .bottom
+    position fixed
+    left 0
+    bottom 0
+    height 48px
+    width 100%
+    box-shadow 0px -4px 2px rgb(230,230,230)
+    display flex
+    background white
+    z-index 99
+    li
+      float left
+      flex 1
+      height 48px
+      text-align center
+      .shidu
+        display block
+        height 22px
+        line-height 22px
+        margin-top 12px
+        border-right 1px solid #d2d8e8
+      .down
+        display block
+        height 22px
+        line-height 22px
+        margin-top 12px
 </style>
 
 <script type="text/ecmascript-6">

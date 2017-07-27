@@ -58,7 +58,8 @@
             person_vip: '会员等级',
             feedback: '帮助反馈',
             content: '专题',
-            book: '书籍详情'
+            book: '书籍详情',
+            comment: '评论详情'
           }
         }
       },

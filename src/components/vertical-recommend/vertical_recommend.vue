@@ -1,6 +1,5 @@
 <template>
   <div class="vertical">
-    <h1>主编推荐</h1>
     <ul>
       <li>
         <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110">

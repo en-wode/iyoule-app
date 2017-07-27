@@ -23,8 +23,14 @@
           <li @click="$router.push({path:'/classify',query:{class:'classify'}})" class="icon-classify">分类</li>
         </ul>
       </div>
-      <vertical></vertical>
-      <transverse></transverse>
+      <div class="tj">
+        <h1>主编推荐</h1>
+        <vertical></vertical>
+      </div>
+      <div class="tj">
+        <h1>主编推荐</h1>
+        <transverse></transverse>
+      </div>
       <fuse></fuse>
     </div>
   </div>
@@ -69,6 +75,13 @@
         border:1px solid #998282
         &:nth-child(5)
           margin-right 0
+  .tj
+    width 100%
+    h1
+      margin: 20px 0 0px 18px;
+      padding-right: 9px;
+      display: inline-block;
+      border-right: 2px solid #ff4c4c;
 </style>
 
 <script type="text/ecmascript-6">
