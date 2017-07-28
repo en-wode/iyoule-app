@@ -1,14 +1,16 @@
 <template lang="html">
     <div class="header">
-      <ul>
+      <ul v-if="this.$route.query.bang">
         <li @click="backHandle"><span class="icon-arrow-left"></span></li>
         <li>{{bang[this.$route.query.bang]}}</li>
         <li class="search">
           <span class="icon-search"></span>
         </li>
       </ul>
-      <div class="search">
-      </div>
+      <ul v-else>
+        <li @click="backHandle"><span class="icon-arrow-left"></span></li>
+        <li>{{book[this.$route.query.book]}}</li>
+      </ul>
     </div>
   <!--<mt-header fixed >
     <mt-button icon="more" slot="right"></mt-button>
@@ -58,8 +60,15 @@
             person_vip: '会员等级',
             feedback: '帮助反馈',
             content: '专题',
-            book: '书籍详情',
-            comment: '评论详情'
+            book: '书籍详情'
+          },
+          book: {
+            comment: '评论详情',
+            catalog: '目录',
+            flower: '鲜花',
+            gift: '打赏',
+            yuep: '月票',
+            commentt: '书评区'
           }
         }
       },

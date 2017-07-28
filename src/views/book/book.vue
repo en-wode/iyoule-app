@@ -17,14 +17,27 @@
       <p class="brief">如果我也有来世，我发誓不在遇见，不在相恋！神帝山山顶，灵力散尽的雪瑶轻轻的说出这句话，却似淬看最狠戾的毒，让烈炎肝肠寸断！</p>
     </div>
     <div class="border_bottom">
-      <p class="latest_new">
-        <i class="icon-consuming-records"></i>目录 <span>830章 花佛</span> <span class="fr">16小时前更新 <i class="icon-arrow"></i></span>
+      <p class="latest_new" @click="$router.push({path:'/catalog',query:{book:'catalog'}})">
+        <i class="icon-consuming-records"></i>目录 <span>830章 花佛</span> 16小时前更新<span class="fr"> <i class="icon-arrow"></i></span>
       </p>
     </div>
-    <div class="border_bottom">
-      <p class="latest_new">
-        <i class="icon-consuming-records"></i>目录 <span>830章 花佛</span> <span class="fr">16小时前更新 <i class="icon-arrow"></i></span>
-      </p>
+    <div class="border_bottom book_handle">
+     <li @click="$router.push({path:'/operation',query:{book:'flower'}})">
+       <i class="icon-flower"></i>
+       <span>鲜花</span>
+     </li>
+      <li @click="$router.push({path:'/operation',query:{book:'gift'}})">
+        <i class="icon-gift" style="color: #79c814"></i>
+        <span>打赏</span>
+      </li>
+      <li @click="$router.push({path:'/operation',query:{book:'yuep'}})">
+        <i class="icon-yuep" style="color: #fc4b4b"></i>
+        <span>投月票</span>
+      </li>
+      <li>
+        <i class="icon-share" style="color: #f29c2e"></i>
+        <span>分享</span>
+      </li>
     </div>
     <div class="border_bottom">
       <div class="comment">
@@ -40,8 +53,8 @@
             <span>灭世邪神</span>
             <span class="user_lv">青铜会员</span>
           </div>
-          <p class="kuai" @click="$router.push({path:'/comment',query:{bang:'comment'}})">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
-          <p class="comment_time">2017-03-28</p>
+          <p class="kuai" @click="$router.push({path:'/comment',query:{book:'comment'}})">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
+          <p class="comment_time">2017-03-28  <i class="icon-comment fr"><span>6</span></i> <i class="icon-zan fr"><span>6</span></i></p>
         </div>
         <div class="ev_comment kuai">
           <div class="tx">
@@ -65,7 +78,7 @@
           <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
           <p class="comment_time">2017-03-28</p>
         </div>
-        <p class="more">加载更多</p>
+        <p class="more" @click="$router.push({path:'/commentt',query:{book:'commentt'}})">加载更多</p>
       </div>
     </div>
     <div>
@@ -122,10 +135,27 @@
     .brief
       color #998282
       line-height 22px
+  .book_handle
+    display flex
+    padding 6px 0
+    li
+      float left
+      flex 1
+      height 48px
+      text-align center
+      i
+        font-size 32px
+        display inline-block
+      span
+        display block
+        font-size 12px
+        vertical-align: 4px;
   .border_bottom
+    display flex
     .latest_new
       padding 8px 16px
       font-size 14px
+      width 100%
       i
         font-size 28px
         vertical-align middle

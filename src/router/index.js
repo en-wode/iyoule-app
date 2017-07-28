@@ -7,9 +7,12 @@ import feedback from '../views/personal/feedback'
 import personlv from '../views/personal/person_lv'
 import personvip from '../views/personal/person_vip'
 import home from '../views/home/home'
-import comment from '../views/comment/comment'
+import catalog from '../views/catalog/catalog'
+import comment from '../components/comment/comment'
+import commentt from '../views/comment/commentt'
 import book from '../views/book/book'
 import bookcity from '../components/bookcity/bookcity'
+import operation from '../components/operation/operation'
 import detail from '../components/paihang/paihang-detail/detail'
 import classify from '../components/classify/classify'
 import free from '../components/free/free'
@@ -26,7 +29,7 @@ let router = new VueRouter({
   linkActiveClass: 'is-active',
   routes: [
     {
-      path: '/',
+      path: '',
       component: main
     },
     {
@@ -68,6 +71,18 @@ let router = new VueRouter({
         {
           path: '/comment',
           component: comment
+        },
+        {
+          path: '/commentt',
+          component: commentt
+        },
+        {
+          path: '/catalog',
+          component: catalog
+        },
+        {
+          path: '/operation',
+          component: operation
         }
       ]
     },

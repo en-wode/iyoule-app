@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <!--<personal></personal>-->
-    <d-head v-if="this.$route.query.bang"></d-head>
+    <d-head v-if="this.$route.query.bang||this.$route.query.book"></d-head>
     <div v-else>
       <v-head v-if="this.$route.query.class"></v-head>
       <p-head v-else></p-head>
@@ -9,10 +9,11 @@
     <div class="contain">
       <router-view></router-view>
     </div>
-    <div class="bottom" v-if="this.$route.query.bang =='book'">
+    <div class="bottom" v-if="this.$route.query.bang == 'book'">
       <li><span class="shidu">免费试读</span></li>
       <li><span class="down">全本下载</span></li>
     </div>
+    <div  v-if="this.$route.query.book"></div>
     <v-bottom v-else></v-bottom>
   </div>
 </template>
