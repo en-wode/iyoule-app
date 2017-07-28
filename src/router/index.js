@@ -11,6 +11,7 @@ import catalog from '../views/catalog/catalog'
 import comment from '../components/comment/comment'
 import commentt from '../views/comment/commentt'
 import book from '../views/book/book'
+import bookread from '../views/bookread/bookread'
 import bookcity from '../components/bookcity/bookcity'
 import operation from '../components/operation/operation'
 import detail from '../components/paihang/paihang-detail/detail'
@@ -105,6 +106,10 @@ let router = new VueRouter({
     {
       path: '/feedback',
       component: feedback
+    },
+    {
+      path: '/bookread',
+      component: bookread
     }
   ]
 })

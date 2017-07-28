@@ -1,7 +1,7 @@
 <template lang="html">
     <div>
       <ul class="catalog">
-        <li><span>•</span>第一张 将上官玉送人</li>
+        <li @click="$router.push({path:'/bookread'})"><span>•</span>第一张 将上官玉送人</li>
         <li><span>•</span>第一张 将上官玉送人</li>
         <li><span>•</span>第一张 将上官玉送人</li>
         <li><span>•</span>第一张 将上官玉送人</li>
