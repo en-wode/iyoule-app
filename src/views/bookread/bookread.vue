@@ -1,13 +1,13 @@
 <template lang="html">
     <div class="book_read">
-      <div class="book_head">
-        <i class="icon-arrow-left"></i>
+      <div class="book_head" v-show="show1">
+        <i class="icon-arrow-left" @click="backHandle"></i>
         <span class="fr">
-          <span>购买</span>
-          <i class="icon-red_packet"></i>
-          <i class="icon-menu"></i>
+          <span class="buy" @click="toggle1('show2')">购买</span>
+          <i class="icon-red_packet" @click="toggle1('show3')"></i>
+          <i class="icon-menu" @click="toggle1('show4')"></i>
         </span>
-        <div class="head_caozuo">
+        <div class="head_caozuo" v-show="show4">
           <ul>
             <li><i class="icon-update"></i>更新提醒</li>
             <li><i class="icon-mark"></i>添加书签</li>
@@ -22,11 +22,43 @@
         <span class="fl">《丹武神尊》</span><span class="fr">第二章 战神之旅</span>
       </div>
       <div class="book_title">第一张 这是标题</div>
-      <div class="book_contain">
+      <div class="book_contain" @click="toggle1('show1')">
         此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息左右，还是阴森森的笑容。 他的背后站着一排黑衣保镖，一个个膀大腰圆，腰里全都藏匿着武器。 而乌鸦的对面，坐着郭思思、
         高富帅和贾仁义一伙人，此刻，三人脸色正如六月乌云阴沉。 “郭小姐，高少爷，别这种不痛快的表...
       </div>
-      <div class="book_bottom">
+      <div class="buy_show" v-show="show2">
+        <div class="border_bottom">
+          <div class="chapter">
+            <h2>沙海合集 <span class="fr">✘</span></h2>
+            <div class="vipchapter">
+              <p><a href="" class="fl">-</a>20章 <a href="" class="fr">+</a></p>
+              <p>20章 <span class="discount">8.5折</span></p>
+              <p>20章</p>
+              <p>20章</p>
+            </div>
+            <p><i class="icon-help"></i>批量购买规则</p>
+          </div>
+        </div>
+        <div class="border_bottom">
+          <div class="price">
+            <p>从 <span>90章 沙海</span> 开始购买</p>
+            <p>价格：<span class="old">180有乐币</span> <span>168有乐币</span></p>
+            <p>余额：300有乐币 150逗币</p>
+          </div>
+        </div>
+        <div class="pay">
+          <p>应支付：18有乐币（含150逗币）</p>
+          <input type="button" value="购买">
+        </div>
+      </div>
+      <div class="dashang" v-show="show3">
+        <ul>
+          <li>打赏红包</li>
+          <li>送鲜花</li>
+          <li>投月票</li>
+        </ul>
+      </div>
+      <div class="book_bottom" v-show="show1 && show5 === false">
         <div class="book_detail">
           <div class="book_back">
             <i class="icon-withdraw"></i>
@@ -38,7 +70,8 @@
         </div>
         <div class="range">
           <mt-range
-            :min="10"
+            v-model="chapterValue"
+            :min="1"
             :max="100"
             :step="1"
             :bar-height="2">
@@ -51,7 +84,7 @@
             <i class="icon-catalog"></i>
             <span>目录</span>
           </li>
-          <li>
+          <li @click="toggle1('show5')">
             <i class="icon-font"></i>
             <span>设置</span>
           </li>
@@ -62,6 +95,39 @@
           <li>
             <i class="icon-catalog"></i>
             <span>下载</span>
+          </li>
+        </div>
+      </div>
+      <div class="shezhi" v-show="show5">
+        <div class="light">
+          <div class="book_light">
+            <i class="icon-bulb a"></i>
+            <div class="range">
+              <mt-range
+              v-model="rangeValue"
+              :min="1"
+              :max="90"
+              :step="1"
+              :bar-height="2">
+              </mt-range>
+            </div>
+            <i class="icon-bulb"></i>
+            <span>系统</span>
+          </div>
+        </div>
+        <div class="font"><a href="">A-</a><span>58</span><a href="">A+</a><span class="fr lt">字体</span></div>
+        <div class="background">
+          <li>
+            <span>✔</span>
+          </li>
+          <li>
+            <span></span>
+          </li>
+          <li>
+            <span></span>
+          </li>
+          <li>
+            <span></span>
           </li>
         </div>
       </div>
@@ -82,6 +148,13 @@
       width 100%
       height 44px
       line-height 44px
+      .buy
+        color #ec4848
+        border 1px solid #ec4848
+        font-size 12px
+        padding 1px 8px
+        border-radius 2px
+        margin-right 20px
       i
         font-size 32px
         vertical-align: middle;
@@ -105,6 +178,74 @@
       width 90%
       margin 0 auto
       line-height 24px
+    .buy_show
+      position absolute
+      width 100%
+      left 0
+      bottom 0
+      z-index 100
+      background white
+      .chapter
+        padding 18px
+        .vipchapter
+          padding 18px 0
+          height 130px
+          .discount
+            transform:rotate(20deg)
+            -ms-transform:rotate(20deg) 	/* IE 9 */
+            -moz-transform:rotate(20deg) 	/* Firefox */
+            -webkit-transform:rotate(20deg) /* Safari 和 Chrome */
+            -o-transform:rotate(20deg)
+            font-size: 12px;
+            line-height: 22px;
+            position: absolute;
+            margin-left: 14px;
+          p
+            border 1px solid #806c6c
+            height 50px
+            display inline-block
+            width 35%
+            float left
+            text-align center
+            line-height 50px
+            border-radius 4px
+            margin-bottom 20px
+            padding 2px 8px
+            &:nth-child(1),&:nth-child(3)
+              margin-right 18%
+      .price
+        padding 18px
+        .old
+          text-decoration: line-through
+          color #998282
+        p
+          line-height 24px
+          height 26px
+          color #998282
+          span
+            color black
+    .pay
+      padding 18px
+      input
+        width 100%
+        color white
+        background #ff4c4c
+        padding 4px
+        border-radius 4px
+        margin 18px 0 40px 0
+        line-height 40px
+    .dashang
+      position absolute
+      bottom 0px
+      left 0
+      background white
+      width 100%
+      ul
+        padding 0 18px
+        li
+          border-1px(rgba(245,240,240,0.8))
+          line-height 50px
+          height 50px
     .book_bottom
       height 120px
       width 100%
@@ -116,21 +257,24 @@
       z-index 99
       .book_detail
         position absolute
-        width 30%
-        left 40%
+        width 40%
+        left 30%
+        height 50px
         bottom 130px
         background #2e2727
         display flex
+        border-radius 4px
         .book_back
           flex 1
           i
             font-size 40px
         .book_now
           flex 2
-      .mt-range-thumb
-        top 7px
-        width 15px
-        height 15px
+          p
+            line-height 25px
+            text-align center
+            font-size 12px
+
     .caozuo
       display flex
       li
@@ -144,10 +288,103 @@
         span
           display block
           font-size 12px
+    .shezhi
+      position absolute
+      width 100%
+      bottom 0
+      left 0
+      background #2e2727
+      .light
+        margin 20px 18px
+        .book_light
+          width 100%
+          display flex
+          color white
+          .range
+            flex 2.5
+          .icon-bulb
+            flex 0.3
+            font-size 30px
+          span
+            flex 0.8
+            text-align center
+            line-height: 30px;
+      .font
+        height 60px
+        margin  0 18px
+        border-1px(rgba(245,240,240,0.8))
+        color white
+        .lt
+          border-left 1px solid
+        a,span
+          line-height 30px
+          height 30px
+          display inline-block
+          text-align center
+          width 70px
+          margin-top 10px
+        a
+          border 1px solid #e6dada
+          color white
+      .background
+        width 100%
+        display flex
+        height 75px
+        li
+          flex 1
+          span
+            margin 15px auto
+            width 39px
+            height 39px
+            display block
+            border-radius 50%
+            background #eece9b
 
 </style>
 
 <script type="text/ecmascript-6">
   export default{
+    data: function () {
+      return {
+        rangeValue: 1,
+        chapterValue: 1,
+        show1: false,
+        show2: false,
+        show3: false,
+        show4: false,
+        show5: false
+      }
+    },
+    methods: {
+      toggle1: function (select) {
+        if (select === 'show1') {
+          this.show1 = !this.show1
+          this.show2 = false
+          this.show3 = false
+          this.show4 = false
+          this.show5 = false
+        }
+        if (select === 'show4') {
+          this.show4 = !this.show4
+          this.show2 = false
+          this.show3 = false
+        }
+        if (select === 'show2') {
+          this.show2 = !this.show2
+          this.show3 = false
+        }
+        if (select === 'show3') {
+          this.show3 = !this.show3
+          this.show2 = false
+        }
+        if (select === 'show5') {
+          this.show5 = !this.show5
+          this.show2 = false
+        }
+      },
+      backHandle () {
+        this.$router.back()
+      }
+    }
   }
 </script>

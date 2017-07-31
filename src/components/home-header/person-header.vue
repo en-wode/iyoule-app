@@ -53,7 +53,7 @@
       methods: {
         toggle: function () {
           this.isShow = !this.isShow
-          console.log(this.isShow)
+          this.$emit('selectshow', this.isShow)
         }
       }
     }

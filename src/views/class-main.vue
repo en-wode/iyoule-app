@@ -1,10 +1,10 @@
 <template lang="html">
   <div>
-    <!--<personal></personal>-->
+    <personal v-if="show"></personal>
     <d-head v-if="this.$route.query.bang||this.$route.query.book"></d-head>
     <div v-else>
       <v-head v-if="this.$route.query.class"></v-head>
-      <p-head v-else></p-head>
+      <p-head @selectshow='onShow' v-else ></p-head>
     </div>
     <div class="contain">
       <router-view></router-view>
@@ -54,6 +54,11 @@
   import bottom from '../components/bottom/bottom.vue'
   import personal from './personal/personal.vue'
   export default {
+    data: function () {
+      return {
+        show: false
+      }
+    },
     components: {
       'v-head': head,
       'p-head': person,
@@ -62,8 +67,8 @@
       personal
     },
     methods: {
-      show () {
-
+      onShow: function (abc) {
+        this.show = abc
       }
     }
   }
