@@ -97,8 +97,9 @@
         margin-right 12px
         color #9c9797
         i
-          font-size 24px
-          vertical-align: middle;
+          font-size 18px
+          vertical-align: sub;
+          margin-right 2px
   .new
     width 90%
     margin 0 auto

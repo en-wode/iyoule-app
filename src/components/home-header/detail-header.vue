@@ -40,13 +40,13 @@
         line-height 55px
         text-align center
         &:nth-child(2)
-          width 80%
+          width 82%
         span
-          font-size 28px
+          font-size 20px
           vertical-align middle
       .search
         flex 0 0 50px
-        font-size 32px
+        font-size 28px
 </style>
 
 <script type="text/ecmascript-6">
@@ -61,6 +61,7 @@
             reward: '打赏榜',
             proflie: '个人资料',
             recharge: '充值',
+            czrecords: '充值记录',
             person_lv: '我的等级',
             person_vip: '会员等级',
             feedback: '帮助反馈',

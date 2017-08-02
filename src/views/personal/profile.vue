@@ -4,7 +4,7 @@
     <div class="personal">
       <div class=" consume">
         <p>账号ID <span class="fr">88888888</span></p>
-        <p>头像</p>
+        <p>头像<span class="fr">蹦擦蹦擦蹦擦擦<i class="icon-arrow"></i></span></p>
         <p>昵称<span class="fr">蹦擦蹦擦蹦擦擦<i class="icon-arrow"></i></span></p>
         <p>性别<span class="fr">男<i class="icon-arrow"></i></span></p>
         <p>生日<span class="fr">2000-02-29<i class="icon-arrow"></i></span></p>
@@ -43,7 +43,9 @@
         line-height 42px
         border-1px(rgba(245,240,240,0.9))
         i
-          font-size 28px
+          font-size 16px
+          color #998282
           vertical-align: middle
+          margin-left 16px
 
 </style>

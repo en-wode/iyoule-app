@@ -1,21 +1,23 @@
 <template lang="html">
     <div class="book_read">
       <div class="book_head" v-show="show1">
-        <i class="icon-arrow-left" @click="backHandle"></i>
-        <span class="fr">
-          <span class="buy" @click="toggle1('show2')">购买</span>
-          <i class="icon-red_packet" @click="toggle1('show3')"></i>
-          <i class="icon-menu" @click="toggle1('show4')"></i>
-        </span>
-        <div class="head_caozuo" v-show="show4">
-          <ul>
-            <li @click="tip('设置成功')"><i class="icon-update"></i>更新提醒</li>
-            <li @click="tip('添加成功')"><i class="icon-mark"></i>添加书签</li>
-            <li><i class="icon-subscription"></i>自动订阅</li>
-            <li><i class="icon-share2"></i>分享</li>
-            <li><i class="icon-notion"></i>显示想法</li>
-            <li @click="$router.push({path:'/warn',query:{book:'warn'}})"><i class="icon-chapter_wrong"></i>章节报错</li>
-          </ul>
+        <div class="wd9">
+          <i class="icon-arrow-left" @click="backHandle"></i>
+          <span class="fr">
+            <span class="buy" @click="toggle1('show2')">购买</span>
+            <i class="icon-red_packet" @click="toggle1('show3')"></i>
+            <i class="icon-menu" @click="toggle1('show4')"> <i class="path1"></i></i>
+          </span>
+          <div class="head_caozuo" v-show="show4">
+            <ul>
+              <li @click="tip('设置成功')"><i class="icon-update"></i>更新提醒</li>
+              <li @click="tip('添加成功')"><i class="icon-mark"></i>添加书签</li>
+              <li><i class="icon-subscription"></i>自动订阅</li>
+              <li><i class="icon-share2"></i>分享</li>
+              <li><i class="icon-notion"></i>显示想法</li>
+              <li @click="$router.push({path:'/warn',query:{book:'warn'}})"><i class="icon-chapter_wrong"></i>章节报错</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="book_tip">
@@ -89,11 +91,11 @@
             <span>设置</span>
           </li>
           <li>
-            <i class="icon-catalog"></i>
+            <i class="icon-comment2"></i>
             <span>评论</span>
           </li>
           <li @click="$router.push({path:'/download',query:{name:'下载'}})">
-            <i class="icon-catalog"></i>
+            <i class="icon-download"></i>
             <span>下载</span>
           </li>
         </div>
@@ -102,7 +104,7 @@
         <div class="fen1" v-show="shezhi1">
           <div class="light">
             <div class="book_light">
-              <i class="icon-bulb a"></i>
+              <i class="icon-bulb-an a"></i>
               <div class="range">
                 <mt-range
                 v-model="rangeValue"
@@ -145,7 +147,7 @@
               <span>护眼模式</span>
             </li>
             <li >
-              <i class="icon-read"></i>
+              <i class="icon-airead"></i>
               <span>自动阅读</span>
             </li>
             <li >
@@ -207,7 +209,8 @@
         border-radius 2px
         margin-right 20px
       i
-        font-size 32px
+        color white
+        font-size 20px
         vertical-align: middle;
     .head_caozuo
       width 40%
@@ -217,6 +220,8 @@
       background #2e2727
       li
         border-1px(rgba(245,240,240,0.2))
+        i
+          padding 6px
     .book_tip
       width 90%
       margin 0 auto
@@ -317,8 +322,12 @@
         border-radius 4px
         .book_back
           flex 1
+          text-align center
           i
-            font-size 40px
+            padding 4px 8px 4px 4px
+            font-size 20px
+            line-height 50px
+            border-right  1px solid whitesmoke
         .book_now
           flex 2
           p
@@ -327,6 +336,7 @@
             font-size 12px
 
     .caozuo
+      margin-top 20px
       display flex
       li
         float left
@@ -334,8 +344,9 @@
         height 48px
         text-align center
         i
-          font-size 32px
+          font-size 22px
           display inline-block
+          padding 4px
         span
           display block
           font-size 12px
@@ -349,6 +360,7 @@
         text-align center
         color white
         margin-top 15px
+        margin-bottom 15px
         font-size 14px
       .light
         margin 20px 18px
@@ -358,7 +370,7 @@
           color white
           .range
             flex 2.5
-          .icon-bulb
+          i
             flex 0.3
             font-size 30px
           span
@@ -368,10 +380,12 @@
       .font
         height 60px
         margin  0 18px
-        border-1px(rgba(245,240,240,0.8))
+        border-1px(rgba(245,240,240,0.2))
         color white
         .lt
           border-left 1px solid
+        a
+          border-radius 4px
         a,span
           line-height 30px
           height 30px
@@ -398,7 +412,7 @@
     .fenye
       height 35px
       width 8%
-      margin 20px auto
+      margin 0px auto 12px auto
       .fen
         width: 10px;
         height: 10px;
@@ -431,7 +445,8 @@
           flex 1
           text-align center
           i
-            font-size 42px
+            padding 10px
+            font-size 28px
             display inline-block
           span
             display block

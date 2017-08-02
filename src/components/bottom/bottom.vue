@@ -32,8 +32,9 @@
       height 48px
       text-align center
       i
-        font-size 32px
+        font-size 22px
         display inline-block
+        line-height 30px
       span
         display block
         font-size 12px

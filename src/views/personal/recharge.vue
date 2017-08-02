@@ -22,7 +22,7 @@
             <li>10000有乐币</li>
             <li>其他</li>
           </ul>
-          <p><span class="red">100</span>元=<span class="red">10000</span>有乐币</p>
+          <p><i class="icon-deposit"></i><span class="red">100</span>元=<span class="red">10000</span>有乐币</p>
           <input type="button" value="确认充值">
         </div>
       </div>
@@ -57,6 +57,9 @@
     .consume
       padding 0 10px
       border-1px(rgba(245,240,240,0.9))
+      i
+        margin-right 10px
+        vertical-align middle
       .zhifu
         padding 0 10px
         margin 0 auto

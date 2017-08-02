@@ -23,7 +23,7 @@
     </div>
     <div class="border_bottom book_handle">
      <li @click="$router.push({path:'/operation',query:{book:'flower'}})">
-       <i class="icon-flower"></i>
+       <i class="icon-flower red"></i>
        <span>鲜花</span>
      </li>
       <li @click="$router.push({path:'/operation',query:{book:'gift'}})">
@@ -54,7 +54,7 @@
             <span class="user_lv">青铜会员</span>
           </div>
           <p class="kuai" @click="$router.push({path:'/comment',query:{book:'comment'}})">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
-          <p class="comment_time">2017-03-28  <i class="icon-comment fr"><span>6</span></i> <i class="icon-zan fr"><span>6</span></i></p>
+          <p class="comment_time">2017-03-28  <i class="icon-comment2 fr"><span>6</span></i> <i class="icon-zan fr"><span>6</span></i></p>
         </div>
         <div class="ev_comment kuai">
           <div class="tx">
@@ -143,8 +143,9 @@
       flex 1
       height 48px
       text-align center
+      line-height 22px
       i
-        font-size 32px
+        font-size 20px
         display inline-block
       span
         display block
@@ -157,10 +158,11 @@
       font-size 14px
       width 100%
       i
-        font-size 28px
+        font-size 22px
         vertical-align middle
         &:first-child
-          font-size 32px
+          font-size 18px
+          margin-right 10px
   h1
     padding 12px 18px 0 18px
   .title
