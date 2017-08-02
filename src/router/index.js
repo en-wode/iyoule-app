@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import main from '../views/class-main'
 import profile from '../views/personal/profile'
 import recharge from '../views/personal/recharge'
+import czrecords from '../views/personal/czrecords'
 import feedback from '../views/personal/feedback'
 import personlv from '../views/personal/person_lv'
 import personvip from '../views/personal/person_vip'
@@ -106,6 +107,10 @@ let router = new VueRouter({
     {
       path: '/recharge',
       component: recharge
+    },
+    {
+      path: '/czrecords',
+      component: czrecords
     },
     {
       path: '/person_lv',

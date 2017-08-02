@@ -110,12 +110,12 @@
       .jin
         color white
         background #0078ff
-        padding 4px 6px
+        padding 2px 4px
         margin-right 10px
       .hot
         color white
         background #ff4c4c
-        padding 4px 6px
+        padding 2px 4px
         margin-right 10px
   .comment_list
     width 80%

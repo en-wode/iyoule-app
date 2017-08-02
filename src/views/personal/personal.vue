@@ -4,7 +4,7 @@
       <div class="head border_bottom" >
         <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="82" height="82" @click="$router.push({path:'/profile',query:{bang:'proflie'}})">
         <div class="level">
-          <span class="fl">黑铁会员</span>
+          <span class="fl">vip</span>
           <span class="fr">黑铁会员</span>
         </div>
         <p class="user_name">蹦擦蹦擦蹦擦擦</p>
@@ -74,15 +74,19 @@
           margin 18px auto 12px auto
           border-radius 50%
         .level
-          width 45%
+          width 50%
           margin 0 auto 9px auto
           height 18px
           span
+            border-radius 4px
+            text-align center
+            width 50px
             font-size 12px
             background #2e2727
             color #fffefd
-            padding 4px 8px
+            padding 5px 8px
         .user_name
+          margin-top 10px
           text-align center
       .consume
         width 100%

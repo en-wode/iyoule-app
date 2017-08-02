@@ -28,7 +28,7 @@
     </div>
 </template>
 
-<style lang="stylus" rel="stylesheet/stylus" type="text/stylus">
+<style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
 .no
   width 100%
   margin 0 auto
