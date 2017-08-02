@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <personal v-if="show"></personal>
+    <personal v-if="show" @hide='onShow'></personal>
     <d-head v-if="this.$route.query.bang||this.$route.query.book"></d-head>
     <div v-else>
       <v-head v-if="this.$route.query.class"></v-head>

@@ -7,6 +7,10 @@
           <span class="icon-search"></span>
         </li>
       </ul>
+      <!--<ul v-if="title == '下载'">
+        <li @click="backHandle"><span class="icon-arrow-left"></span></li>
+        <li>{{title}}</li>
+      </ul>-->
       <ul v-else>
         <li @click="backHandle"><span class="icon-arrow-left"></span></li>
         <li>{{book[this.$route.query.book]}}</li>
@@ -47,6 +51,7 @@
 
 <script type="text/ecmascript-6">
     export default{
+      props: ['title'],
       data () {
         return {
           bang: {

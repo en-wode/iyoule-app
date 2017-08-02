@@ -9,8 +9,8 @@
         </span>
         <div class="head_caozuo" v-show="show4">
           <ul>
-            <li><i class="icon-update"></i>更新提醒</li>
-            <li><i class="icon-mark"></i>添加书签</li>
+            <li @click="tip('设置成功')"><i class="icon-update"></i>更新提醒</li>
+            <li @click="tip('添加成功')"><i class="icon-mark"></i>添加书签</li>
             <li><i class="icon-subscription"></i>自动订阅</li>
             <li><i class="icon-share2"></i>分享</li>
             <li><i class="icon-notion"></i>显示想法</li>
@@ -48,7 +48,7 @@
         </div>
         <div class="pay">
           <p>应支付：18有乐币（含150逗币）</p>
-          <input type="button" value="购买">
+          <input type="button" value="购买" @click="tip('支付成功')">
         </div>
       </div>
       <div class="dashang" v-show="show3">
@@ -80,7 +80,7 @@
           </mt-range>
         </div>
         <div class="caozuo">
-          <li>
+          <li @click="$router.push({path:'/mulu',query:{name:'书名'}})">
             <i class="icon-catalog"></i>
             <span>目录</span>
           </li>
@@ -92,7 +92,7 @@
             <i class="icon-catalog"></i>
             <span>评论</span>
           </li>
-          <li>
+          <li @click="$router.push({path:'/download',query:{name:'下载'}})">
             <i class="icon-catalog"></i>
             <span>下载</span>
           </li>
@@ -178,7 +178,7 @@
           </mt-cell>
           <div class="wd9 linh">批量购买 <span class="fr"> <i class="icon-arrow"></i></span></div>
           <p class="wd9 linh">应支付：<span class="red">5逗币</span></p>
-          <input type="button" value="确认支付" class="inputall" @click="tip">
+          <input type="button" value="确认支付" class="inputall" @click="tip('支付成功')">
           <p class="wd9 tip">开通VIP立享折扣优惠！</p>
         </div>
       </div>
@@ -523,8 +523,8 @@
       backHandle () {
         this.$router.back()
       },
-      tip () {
-        Toast('支付成功')
+      tip (infor) {
+        Toast(infor)
       }
     }
   }

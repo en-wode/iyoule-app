@@ -14,6 +14,8 @@ import book from '../views/book/book'
 import bookread from '../views/bookread/bookread'
 import warn from '../views/bookread/book-detail/warn'
 import more from '../views/bookread/book-detail/more'
+import mulu from '../views/bookread/book-detail/mulu'
+import download from '../views/bookread/book-detail/download'
 import bookcity from '../components/bookcity/bookcity'
 import operation from '../components/operation/operation'
 import detail from '../components/paihang/paihang-detail/detail'
@@ -120,6 +122,14 @@ let router = new VueRouter({
     {
       path: '/bookread',
       component: bookread
+    },
+    {
+      path: '/mulu',
+      component: mulu
+    },
+    {
+      path: '/download',
+      component: download
     }
   ]
 })

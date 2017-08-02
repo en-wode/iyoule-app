@@ -27,6 +27,7 @@
         <p><i class="icon-night"></i>开启夜间模式<i class="icon-set"></i></p>
       </div>
     </div>
+    <div class="unperson" @click="pers()"></div>
   </div>
 </template>
 
@@ -35,6 +36,11 @@
   export default {
     components: {
       profile
+    },
+    methods: {
+      pers: function () {
+        this.$emit('hide', false)
+      }
     }
   }
 </script>
@@ -89,5 +95,12 @@
           i
             font-size 28px
             vertical-align: middle
+    .unperson
+      width  20%
+      position absolute
+      top 0
+      right  0
+      height 100%
+      overflow hidden
 
 </style>
