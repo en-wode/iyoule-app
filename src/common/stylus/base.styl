@@ -20,7 +20,7 @@ body,html
   text-align right
 
 .red
-  color:red
+  color:#ff4c4c
 .clearfix
   display : inline-block
   &:after
@@ -34,14 +34,27 @@ body,html
 .border_bottom
   border-bottom 8px solid #f5f0f0
 
+
+.mint-checkbox-input:checked + .mint-checkbox-core
+  background-color #ff4c4c
+  border-color #ff4c4c
+
+.wd9
+  padding 0 20px
+
 .contain
   width: 100%;
   overflow: hidden;
-  margin-top: 55px;
+  position absolute
+  top 55px
   margin-bottom: 48px;
 
 .yiny
   box-shadow 3px 2px 2px #bfbfbf
+
+.linh
+  line-height 40px
+  height 40px
 
 .tc
   text-align center
@@ -102,6 +115,7 @@ body,html
     color #3b89ff
     padding  22px 0 10px 0
 
+//小组件样式修改
 //range
 .mt-range-thumb {
   top: 7px;
@@ -116,3 +130,32 @@ body,html
   background-color #ff4c4c
 }
 
+//打钩
+.mint-checkbox-label
+  margin-left 0
+.mint-checkbox-core::after
+  width 5px
+  height 9px
+
+//switch
+.mint-switch-core::before
+  width: 17px;
+  height: 17px;
+.mint-switch-core::after
+  width: 17px;
+  height: 17px;
+.mint-switch-core
+  width: 37px;
+  height: 19px;
+.mint-switch-input:checked + .mint-switch-core
+  border-color: #ff4c4c;
+  background-color: #ff4c4c;
+
+//input 单独一行设置
+  .inputall
+    width 90%
+    height 42px
+    color white
+    display block
+    background #ff4c4c
+    border-radius 4px

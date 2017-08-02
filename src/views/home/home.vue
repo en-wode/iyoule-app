@@ -71,12 +71,10 @@
     </div>
 </template>
 
-<style lang="stylus" rel="stylesheet/stylus" type="text/stylus">
+<style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   .contain
     width 100%
     overflow hidden;
-    margin-top 55px
-    margin-bottom 48px
     .slide-fade-enter-active
       transition: all .3s ease
     .slide-fade-leave-active

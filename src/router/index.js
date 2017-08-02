@@ -12,6 +12,8 @@ import comment from '../components/comment/comment'
 import commentt from '../views/comment/commentt'
 import book from '../views/book/book'
 import bookread from '../views/bookread/bookread'
+import warn from '../views/bookread/book-detail/warn'
+import more from '../views/bookread/book-detail/more'
 import bookcity from '../components/bookcity/bookcity'
 import operation from '../components/operation/operation'
 import detail from '../components/paihang/paihang-detail/detail'
@@ -84,6 +86,14 @@ let router = new VueRouter({
         {
           path: '/operation',
           component: operation
+        },
+        {
+          path: '/warn',
+          component: warn
+        },
+        {
+          path: '/more',
+          component: more
         }
       ]
     },

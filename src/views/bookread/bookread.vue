@@ -14,7 +14,7 @@
             <li><i class="icon-subscription"></i>自动订阅</li>
             <li><i class="icon-share2"></i>分享</li>
             <li><i class="icon-notion"></i>显示想法</li>
-            <li><i class="icon-chapter_wrong"></i>章节报错</li>
+            <li @click="$router.push({path:'/warn',query:{book:'warn'}})"><i class="icon-chapter_wrong"></i>章节报错</li>
           </ul>
         </div>
       </div>
@@ -58,7 +58,7 @@
           <li>投月票</li>
         </ul>
       </div>
-      <div class="book_bottom" v-show="show1 && show5 === false">
+      <div class="book_bottom" v-show="show1 && show5 === false && show3 === false">
         <div class="book_detail">
           <div class="book_back">
             <i class="icon-withdraw"></i>
@@ -99,42 +99,93 @@
         </div>
       </div>
       <div class="shezhi" v-show="show5">
-        <div class="light">
-          <div class="book_light">
-            <i class="icon-bulb a"></i>
-            <div class="range">
-              <mt-range
-              v-model="rangeValue"
-              :min="1"
-              :max="90"
-              :step="1"
-              :bar-height="2">
-              </mt-range>
+        <div class="fen1" v-show="shezhi1">
+          <div class="light">
+            <div class="book_light">
+              <i class="icon-bulb a"></i>
+              <div class="range">
+                <mt-range
+                v-model="rangeValue"
+                :min="1"
+                :max="90"
+                :step="1"
+                :bar-height="2">
+                </mt-range>
+              </div>
+              <i class="icon-bulb"></i>
+              <span>系统</span>
             </div>
-            <i class="icon-bulb"></i>
-            <span>系统</span>
+          </div>
+          <div class="font"><a href="">A-</a><span>58</span><a href="">A+</a><span class="fr lt">字体</span></div>
+          <div class="background">
+            <li>
+              <span>✔</span>
+            </li>
+            <li>
+              <span></span>
+            </li>
+            <li>
+              <span></span>
+            </li>
+            <li>
+              <span></span>
+            </li>
           </div>
         </div>
-        <div class="font"><a href="">A-</a><span>58</span><a href="">A+</a><span class="fr lt">字体</span></div>
-        <div class="background">
-          <li>
-            <span>✔</span>
-          </li>
-          <li>
-            <span></span>
-          </li>
-          <li>
-            <span></span>
-          </li>
-          <li>
-            <span></span>
-          </li>
+        <div class="fen2" v-show="shezhi2">
+          <div class="space">
+            <li ><i class="icon-space_big"></i></li>
+            <li ><i class="icon-space_big"></i></li>
+            <li><i class="icon-space_big"></i></li>
+            <li ><i class="icon-dege"></i></li>
+          </div>
+          <div class="mode">
+            <li >
+              <i class="icon-eye"></i>
+              <span>护眼模式</span>
+            </li>
+            <li >
+              <i class="icon-read"></i>
+              <span>自动阅读</span>
+            </li>
+            <li >
+              <i class="icon-switch"></i>
+              <span>横屏模式</span>
+            </li>
+            <li >
+              <i class="icon-full_screen"></i>
+              <span>全屏模式</span>
+            </li>
+          </div>
+          <p @click="$router.push({path:'/more',query:{book:'more'}})">更多设置>></p>
+        </div>
+        <div class="fenye">
+          <div class="fl fen" @click="toggle1('shezhi1')"></div>
+          <div class="fr fen" @click="toggle1('shezhi2')"></div>
+        </div>
+      </div>
+      <div class="book_dan " v-show="show6">
+        <div class="border_bottom">
+          <div class="wd9 top">
+            <h2>136章 豪车如雨 <i class="fr">✘</i></h2>
+            <p>价格：<span class="red">5有乐币</span></p>
+            <p>余额：0有乐币  15逗币</p>
+          </div>
+        </div>
+        <div>
+          <mt-cell :title="'自动订阅下一章'">
+            <mt-switch v-model="value1" ></mt-switch>
+          </mt-cell>
+          <div class="wd9 linh">批量购买 <span class="fr"> <i class="icon-arrow"></i></span></div>
+          <p class="wd9 linh">应支付：<span class="red">5逗币</span></p>
+          <input type="button" value="确认支付" class="inputall" @click="tip">
+          <p class="wd9 tip">开通VIP立享折扣优惠！</p>
         </div>
       </div>
     </div>
 </template>
 
-<style lang="stylus" rel="stylesheet/stylus" type="text/stylus">
+<style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   @import "../../common/stylus/mixin.styl"
   .book_read
     background #dfcba9
@@ -294,6 +345,11 @@
       bottom 0
       left 0
       background #2e2727
+      p
+        text-align center
+        color white
+        margin-top 15px
+        font-size 14px
       .light
         margin 20px 18px
         .book_light
@@ -339,10 +395,80 @@
             display block
             border-radius 50%
             background #eece9b
+    .fenye
+      height 35px
+      width 8%
+      margin 20px auto
+      .fen
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        border-radius: 100%;
+        background: #806c6c;
+        opacity: .2;
+    .fen2
+      color white
+      .space
+        display flex
+        width 95%
+        margin 0 auto
+        height 50px
+        border-1px(rgba(245,240,240,0.2))
+        li
+          flex 1
+          text-align center
+          i
+            display inline-block
+            font-size 48px
+            line-height 50px
+      .mode
+        display flex
+        width 95%
+        margin 0 auto
+        height 80px
+        border-1px(rgba(245,240,240,0.2))
+        li
+          flex 1
+          text-align center
+          i
+            font-size 42px
+            display inline-block
+          span
+            display block
+            font-size 12px
+    .book_dan
+      background white
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 100%;
+      .border_bottom
+        padding 0 0 10px 0
+        .top
+          h2
+            height 40px
+            line-height 40px
+            border-1px(rgba(245,240,240,0.8))
+            margin-bottom 10px
+          p
+            height 25px
+            line-height 25px
+      .mint-cell
+        padding 0 10px 0 10px
+      input
+        margin 10px auto 10px auto
+      .tip
+        text-align center
+        line-height 30px
+        height 30px
+        color #ff4c4c
+        margin-bottom 20px
+
 
 </style>
 
 <script type="text/ecmascript-6">
+  import { Toast } from 'mint-ui'
   export default{
     data: function () {
       return {
@@ -352,7 +478,11 @@
         show2: false,
         show3: false,
         show4: false,
-        show5: false
+        show5: false,
+        show6: false,
+        shezhi2: false,
+        shezhi1: true,
+        value1: false
       }
     },
     methods: {
@@ -381,9 +511,20 @@
           this.show5 = !this.show5
           this.show2 = false
         }
+        if (select === 'shezhi1') {
+          this.shezhi1 = true
+          this.shezhi2 = false
+        }
+        if (select === 'shezhi2') {
+          this.shezhi2 = true
+          this.shezhi1 = false
+        }
       },
       backHandle () {
         this.$router.back()
+      },
+      tip () {
+        Toast('支付成功')
       }
     }
   }
