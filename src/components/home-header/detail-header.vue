@@ -64,6 +64,8 @@
             czrecords: '充值记录',
             person_lv: '我的等级',
             person_vip: '会员等级',
+            person_new: '消息中心',
+            person_book: '我的书籍',
             feedback: '帮助反馈',
             content: '专题',
             book: '书籍详情'

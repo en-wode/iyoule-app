@@ -18,8 +18,8 @@
         <p @click="$router.push({path:'/person_vip',query:{bang:'person_vip'}})"><i class="icon-VIP"></i>vip等级<span class="fr"><i class="icon-arrow"></i></span></p>
       </div>
       <div class="border_bottom consume">
-        <p><i class="icon-new"></i>消息中心<span class="fr"><i class="icon-arrow"></i></span></p>
-        <p><i class="icon-mybook"></i>我的书籍<span class="fr"><i class="icon-arrow"></i></span></p>
+        <p @click="$router.push({path:'/person_new',query:{bang:'person_new'}})"><i class="icon-new"></i>消息中心<span class="fr"><i class="icon-arrow"></i></span></p>
+        <p @click="$router.push({path:'/person_book',query:{bang:'person_book'}})"><i class="icon-mybook"></i>我的书籍<span class="fr"><i class="icon-arrow"></i></span></p>
         <p @click="$router.push({path:'/feedback',query:{bang:'feedback'}})"><i class="icon-help"></i>帮助反馈<span class="fr"><i class="icon-arrow"></i></span></p>
         <p @click="$router.push({path:'/profile',query:{bang:'proflie'}})"><i class="icon-person-data"></i>个人资料<span class="fr"><i class="icon-arrow"></i></span></p>
       </div>
