@@ -10,7 +10,7 @@
       </div>
       <div class="classify">
         <ul v-if="this.$route.query.class">
-          <router-link to="/bookcity-classify/nan" tag="span" class="nan" >玄幻</router-link>
+          <span class="nan" @click="$router.push({path:'/detail',query:{bang:'xuanhuan'}})">玄幻</span>
           <router-link to="/bookcity-classify/nv" tag="span" class="nv">都市</router-link>
           <router-link to="/home" tag="span" class="free">灵异</router-link>
           <router-link to="/home" tag="span" class="icon-classify">历史</router-link>

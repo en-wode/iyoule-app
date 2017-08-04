@@ -12,19 +12,19 @@
       <div>
         <h1>男频</h1>
       </div>
-      <ul @click="$router.push({path:'/detail',query:{bang:'hit'}})">
+      <ul @click="$router.push({path:'/detail',query:{bang:'xuanhuan'}})">
         <li><img src="../../components/classify/baser_cover.png" alt="" width="42" height="54"></li>
         <li><img src="../../components/classify/baser_cover.png" alt="" width="55" height="70"></li>
         <li><img src="../../components/classify/baser_cover.png" alt="" width="42" height="54"></li>
         <p>玄幻小说</p>
       </ul>
-      <ul @click="$router.push({path:'/detail',query:{bang:'hit'}})">
+      <ul @click="$router.push({path:'/detail',query:{bang:'nan'}})">
         <li ><img src="../../components/classify/baser_cover.png" alt="" width="42" height="54"></li>
         <li><img src="../../components/classify/baser_cover.png" alt="" width="55" height="70"></li>
         <li><img src="../../components/classify/baser_cover.png" alt="" width="42" height="54"></li>
         <p>玄幻小说</p>
       </ul>
-      <ul @click="$router.push({path:'/detail',query:{bang:'hit'}})">
+      <ul @click="$router.push({path:'/detail',query:{bang:'nan'}})">
         <li><img src="../../components/classify/baser_cover.png" alt="" width="42" height="54"></li>
         <li><img src="../../components/classify/baser_cover.png" alt="" width="55" height="70"></li>
         <li><img src="../../components/classify/baser_cover.png" alt="" width="42" height="54"></li>

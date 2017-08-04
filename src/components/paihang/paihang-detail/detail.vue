@@ -2,18 +2,20 @@
   <div class="detail">
     <div class="sex">
       <div class="selec-top">
-        <span @click="$router.push({path:'/detail',query:{bang:bang,class:'nan'}})" class="sex_detail">男生</span>
-        <span @click="$router.push({path:'/detail',query:{bang:bang,class:'nv'}})" class="sex_detail">女生</span>
-        <!--<span @click="$router.push({path:'/detail',query:{bang:bang,class:'nan'}})" class="sex_detail">排序方式</span>
-        <span @click="$router.push({path:'/detail',query:{bang:bang,class:'nv'}})" class="sex_detail">筛选</span>-->
+        <!--<div>
+          <span @click="$router.push({path:'/detail',query:{bang:bang,class:'nan'}})" class="sex_detail">男生</span>
+          <span @click="$router.push({path:'/detail',query:{bang:bang,class:'nv'}})" class="sex_detail">女生</span>
+        </div>-->
+        <span class="sex_detail" @click="isshow('paixu')">排序方式</span>
+        <span class="sex_detail" @click="isshow('shaixuan')">筛选</span>
       </div>
-      <!--<div class="select">
-        <div class="show"><span>按人气</span><span class="icon-arrow fr"></span></div>
+      <div class="select" v-show="paixu">
+        <div class="show">按人气<span class="icon-arrow fr"></span></div>
         <div class="show">按收藏<span class="icon-arrow fr"></span></div>
         <div class="show">按字数<span class="icon-arrow fr"></span></div>
         <div class="show">按更新<span class="icon-arrow fr"></span></div>
-      </div>-->
-      <div class="select">
+      </div>
+      <div class="select" v-show="shaixuan">
         <div class="show">状态 <span>连载</span><span>已完结</span> </div>
         <div class="show">价格 <span>连载</span><span>已完结</span><span>连载</span></div>
         <div class="show">更新 <span>三天内</span><span>一周内</span></div>
@@ -23,7 +25,7 @@
     <ul>
       <li>
         <img src="../../../components/paihang/paihang-detail/baser_cover.png" alt="" width="88" height="110">
-        <h2>修罗天帝{{this.$route.query.class}}</h2>
+        <h2>修罗天帝{{this.$route.query.class}}123123</h2>
         <p>八年前，雷霆古城一夜惊变，少城主秦明压入青云宗为仆，二十万民众赶进大青云山为奴。八年后，翠玲入武</p>
         <span class="fl">实验小白鼠</span>
         <span class="fr label">爽文、热血</span>
@@ -66,7 +68,20 @@
     data: function () {
       var bang = this.$route.query.bang
       return {
-        bang: bang
+        bang: bang,
+        paixu: false,
+        shaixuan: false
+      }
+    },
+    methods: {
+      isshow (show) {
+        if (show === 'paixu') {
+          this.paixu = true
+          this.shaixuan = false
+        } else {
+          this.paixu = false
+          this.shaixuan = true
+        }
       }
     }
   }
@@ -76,10 +91,10 @@
   @import "../../../common/stylus/mixin.styl"
   .detail
     .sex
-      height 41px
       border-bottom 1px solid #f5f0f0
       position relative
       .selec-top
+        height 41px
         box-shadow 0 0 3px 3px #f0efee
       .sex_detail
         display inline-block
@@ -98,13 +113,16 @@
           width 90%
           margin 0 auto
           line-height 40px
+          font-size 14px
           border-1px(rgba(245,240,240,0.9))
           .icon-arrow
-            font-size: 28px;
+            font-size: 16px;
             line-height: 38px;
           span
             font-weight 400
             font-size 12px
+            display inline-block
+            margin-left 20px
     ul
       padding-bottom 24px
       width 90%

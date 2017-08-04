@@ -12,6 +12,10 @@
         <h2>一起成功：不仅有颜值还有才气</h2>
         <img src="../../components/topic/top_1.png" alt="" width="330" height="100">
       </div>
+      <div class="topic" @click="$router.push({path:'/topic-content',query:{bang:'content'}})">
+        <h2>一起成功：不仅有颜值还有才气</h2>
+        <img src="../../components/topic/top_1.png" alt="" width="330" height="100">
+      </div>
     </div>
 </template>
 

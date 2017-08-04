@@ -77,7 +77,9 @@
             birthday: '修改生日',
             email: '修改邮箱',
             phone: '修改手机',
-            password: '修改密码'
+            password: '修改密码',
+            xuanhuan: '玄幻小说',
+            nv: '女频'
           },
           book: {
             comment: '评论详情',
