@@ -4,23 +4,53 @@
     <div class="personal">
       <div class=" consume">
         <p>账号ID <span class="fr">88888888</span></p>
-        <p>头像<span class="fr">蹦擦蹦擦蹦擦擦<i class="icon-arrow"></i></span></p>
-        <p>昵称<span class="fr">蹦擦蹦擦蹦擦擦<i class="icon-arrow"></i></span></p>
-        <p>性别<span class="fr">男<i class="icon-arrow"></i></span></p>
-        <p>生日<span class="fr">2000-02-29<i class="icon-arrow"></i></span></p>
-        <p>绑定邮箱<span class="fr">381527994@qq.com<i class="icon-arrow"></i></span></p>
-        <p>绑定手机<span class="fr">159*****3366<i class="icon-arrow"></i></span></p>
-        <p>修改密码<span class="fr">88888888<i class="icon-arrow"></i></span></p>
+        <p >头像<span class="fr">蹦擦蹦擦蹦擦擦<i class="icon-arrow"></i></span></p>
+        <p @click="$router.push({path:'/ziliao',query:{bang:'name'}})">昵称<span class="fr">蹦擦蹦擦蹦擦擦<i class="icon-arrow"></i></span></p>
+        <p @click="$router.push({path:'/ziliao',query:{bang:'sex'}})">性别<span class="fr">男<i class="icon-arrow"></i></span></p>
+        <mt-button @click.native="open('picker')" size="large"><span class="fl">生日</span><span class="fr">{{value}}<i class="icon-arrow"></i></span></mt-button>
+        <p @click="$router.push({path:'/ziliao',query:{bang:'email'}})">绑定邮箱<span class="fr">381527994@qq.com<i class="icon-arrow"></i></span></p>
+        <p @click="$router.push({path:'/ziliao',query:{bang:'phone'}})">绑定手机<span class="fr">159*****3366<i class="icon-arrow"></i></span></p>
+        <p @click="$router.push({path:'/ziliao',query:{bang:'password'}})">修改密码<span class="fr">88888888<i class="icon-arrow"></i></span></p>
       </div>
     </div>
+    <mt-datetime-picker
+      ref="picker"
+      type="date"
+      v-model="value"
+      year-format="{value} 年"
+      month-format="{value} 月"
+      date-format="{value} 日"
+      :startDate="startDate"
+      :endDate="endDate"
+      @confirm="handleChange">
+    </mt-datetime-picker>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import detail from '../../components/home-header/detail-header.vue'
+  import { Toast } from 'mint-ui'
   export default {
+    data () {
+      return {
+        value: null,
+        startDate: new Date('2014'),
+        endDate: new Date()
+      }
+    },
     components: {
       'd-head': detail
+    },
+    methods: {
+      open (picker) {
+        this.$refs[picker].open()
+      },
+      handleChange (value) {
+        Toast({
+          message: '已选择 ' + value.toLocaleString(),
+          position: 'bottom'
+        })
+      }
     }
   }
 </script>

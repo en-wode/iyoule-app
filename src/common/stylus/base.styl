@@ -138,7 +138,10 @@ body,html
 .mint-checkbox-core::after
   width 5px
   height 9px
-
+//单选
+.mint-radio-input:checked + .mint-radio-core
+  background-color #ff4c4c
+  border-color #ff4c4c
 //switch
 .mint-switch-core::before
   width: 17px;
@@ -172,3 +175,15 @@ body,html
   padding 14px 0
 .mint-navbar
   box-shadow 0 2px 2px #bfbfbf
+
+//生日
+.mint-button--default
+  color: black
+  background-color: white
+  box-shadow none
+  padding 0
+  width 90%
+  margin 0 auto
+.mint-button--normal
+  width 90%
+  margin 0 auto

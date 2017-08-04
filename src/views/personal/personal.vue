@@ -24,7 +24,7 @@
         <p @click="$router.push({path:'/profile',query:{bang:'proflie'}})"><i class="icon-person-data"></i>个人资料<span class="fr"><i class="icon-arrow"></i></span></p>
       </div>
       <div class="consume">
-        <p><i class="icon-night"></i>开启夜间模式<span class="fr"><i class="icon-set"></i></span></p>
+        <p><i class="icon-night"></i>开启夜间模式<span class="fr" @click="$router.push({path:'/set',query:{bang:'set'}})"><i class="icon-set"></i></span></p>
       </div>
     </div>
     <div class="unperson" @click="pers()"></div>

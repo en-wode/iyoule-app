@@ -68,7 +68,16 @@
             person_book: '我的书籍',
             feedback: '帮助反馈',
             content: '专题',
-            book: '书籍详情'
+            book: '书籍详情',
+            set: '设置',
+            tuisong: '消息推送设置',
+            like: '偏好设置',
+            name: '修改昵称',
+            sex: '修改性别',
+            birthday: '修改生日',
+            email: '修改邮箱',
+            phone: '修改手机',
+            password: '修改密码'
           },
           book: {
             comment: '评论详情',

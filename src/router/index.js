@@ -6,9 +6,12 @@ import recharge from '../views/personal/recharge'
 import czrecords from '../views/personal/czrecords'
 import personnew from '../views/personal/person_new'
 import personbook from '../views/personal/person_book'
+import set from '../views/personal/set'
 import feedback from '../views/personal/feedback'
 import personlv from '../views/personal/person_lv'
 import personvip from '../views/personal/person_vip'
+import tuisong from '../views/personal/person_detail/tuisong'
+import ziliao from '../views/personal/person_detail/ziliao'
 import home from '../views/home/home'
 import catalog from '../views/catalog/catalog'
 import comment from '../components/comment/comment'
@@ -121,6 +124,18 @@ let router = new VueRouter({
     {
       path: '/person_book',
       component: personbook
+    },
+    {
+      path: '/set',
+      component: set
+    },
+    {
+      path: '/tuisong',
+      component: tuisong
+    },
+    {
+      path: '/ziliao',
+      component: ziliao
     },
     {
       path: '/person_lv',
