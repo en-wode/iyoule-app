@@ -3,9 +3,9 @@
       <ul v-if="this.$route.query.bang">
         <li @click="backHandle"><span class="icon-arrow-left"></span></li>
         <li>{{bang[this.$route.query.bang]}}</li>
-        <li class="search">
+        <router-link tag="li" to="/search" class="search">
           <span class="icon-search"></span>
-        </li>
+        </router-link>
       </ul>
       <!--<ul v-if="title == '下载'">
         <li @click="backHandle"><span class="icon-arrow-left"></span></li>

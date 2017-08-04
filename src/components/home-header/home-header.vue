@@ -6,9 +6,9 @@
         <li  @click="$router.push({path:'/bookcity',query:{class:'nv'}})"><span>女频</span></li>
         <li @click="$router.push({path:'/free',query:{class:'free'}})"><span>免费</span></li>
         <li  @click="$router.push({path:'/classify',query:{class:'classify'}})"><span>分类</span></li>
-        <li class="search">
+        <router-link class="search" tag="li" to="/search">
           <span class="icon-search"></span>
-        </li>
+        </router-link>
       </ul>
       <div class="search">
       </div>

@@ -3,9 +3,9 @@
       <ul>
         <li @click="toggle"><span class="icon-personal"></span></li>
         <li>有乐中文</li>
-        <li class="search">
+        <router-link class="search" tag="li" to="/search">
           <span class="icon-search"></span>
-        </li>
+        </router-link>
       </ul>
       <div class="search">
       </div>

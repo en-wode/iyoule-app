@@ -7,6 +7,7 @@ import czrecords from '../views/personal/czrecords'
 import personnew from '../views/personal/person_new'
 import personbook from '../views/personal/person_book'
 import set from '../views/personal/set'
+import search from '../views/search/search'
 import feedback from '../views/personal/feedback'
 import personlv from '../views/personal/person_lv'
 import personvip from '../views/personal/person_vip'
@@ -160,6 +161,10 @@ let router = new VueRouter({
     {
       path: '/download',
       component: download
+    },
+    {
+      path: '/search',
+      component: search
     }
   ]
 })
