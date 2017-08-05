@@ -9,12 +9,11 @@
     <div class="contain">
       <router-view></router-view>
     </div>
-    <div class="bottom" v-if="this.$route.query.bang == 'book'">
+    <div class="bottom" v-if="this.$route.query.book == 'book'">
       <li><span class="shidu">免费试读</span></li>
       <li><span class="down">全本下载</span></li>
     </div>
-    <div  v-if="this.$route.query.book"></div>
-    <v-bottom v-else></v-bottom>
+      <v-bottom v-if="this.$route.query.book == null"></v-bottom>
   </div>
 </template>
 

@@ -68,7 +68,6 @@
             person_book: '我的书籍',
             feedback: '帮助反馈',
             content: '专题',
-            book: '书籍详情',
             set: '设置',
             tuisong: '消息推送设置',
             like: '偏好设置',
@@ -82,6 +81,7 @@
             nv: '女频'
           },
           book: {
+            book: '书籍详情',
             comment: '评论详情',
             catalog: '目录',
             flower: '鲜花',

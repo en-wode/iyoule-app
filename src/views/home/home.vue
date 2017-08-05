@@ -10,7 +10,7 @@
       </div>
       <div class="home_contain" ref="home_contain">
         <ul>
-          <li @click="$router.push({path:'/book',query:{bang:'book'}})">
+          <li @click="$router.push({path:'/book',query:{book:'book'}})">
             <img src="../home/baser_cover.png" alt="" width="88" height="110">
             <span class="book_name">重生之龙在都市</span>
           </li>
