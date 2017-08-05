@@ -88,11 +88,24 @@
           searcharr: []
         }
       },
+      created () {
+        if (sessionStorage.userName) {
+          this.searcharr = sessionStorage.userName.split(',')
+        }
+      },
       methods: {
         backHandle () {
           this.$router.back()
         },
         search () {
+          if (this.$refs.input1.value === '') {
+            return
+          }
+          for (let i = 0; i < this.searcharr.length; i++) {
+            if (this.searcharr[i] === this.$refs.input1.value) {
+              this.searcharr.splice(i, 1)
+            }
+          }
           if (this.searcharr.length > 5) {
             this.searcharr.shift()
           }

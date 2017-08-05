@@ -6,7 +6,7 @@
           <span>连续签到领逗币兑换神秘礼物！</span>
           <span>每天签到都可获取有乐豆</span>
         </p>
-        <input type="button" value="立即签到" @click="tip">
+        <input type="button" value="立即签到" @click="$router.push({path:'/qiandao'})">
       </div>
       <div class="home_contain" ref="home_contain">
         <ul>
