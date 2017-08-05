@@ -22,12 +22,12 @@
           <li @click="$router.push({path:'/commentt2',query:{book:'hot'}})"><span class="hot">热</span>热门评论（19）<span class="fr"><i class="icon-arrow"></i></span></li>
         </ul>
         <p class="comment_list" >
-          <a href="">全部</a>
-          <a href="">书评</a>
-          <a href="">看法</a>
+          <a  @click="isshow('1')" :class="{red:show == 1}">全部</a>
+          <a @click="isshow('1')">书评</a>
+          <a  @click="isshow('3')">看法</a>
         </p>
       </div>
-      <div class="comment">
+      <div class="comment" v-show="show == '1'">
         <div class="ev_comment kuai">
           <div class="tx">
             <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
@@ -42,6 +42,27 @@
           </div>
           <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
           <p class="comment_time">2017-03-28</p>
+        </div>
+      </div>
+      <div class="comment" v-show="show == '3'">
+        <div class="ev_comment kuai">
+          <div class="tx">
+            <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+          </div>
+          <div class="user_new">
+            <span>灭世邪神</span>
+            <span class="user_lv">青铜会员</span>
+            <span class="user_vip">
+              <i>vip</i>
+            </span>
+            <span class="user_author"><i>作者</i></span>
+          </div>
+          <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
+          <p class="comment_time">2017-03-28</p>
+          <p class="duanluo">
+            【第九章 终极幽灵要】
+            <span>可沈飞转念一想，这劣药大笔可不是平时的啊阿达安抚安抚是否啊</span>
+          </p>
         </div>
       </div>
     </div>
@@ -133,5 +154,15 @@
 
 <script type="text/ecmascript-6">
     export default{
+      data () {
+        return {
+          show: '1'
+        }
+      },
+      methods: {
+        isshow: function (list) {
+          this.show = list
+        }
+      }
     }
 </script>
