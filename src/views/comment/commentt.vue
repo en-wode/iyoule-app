@@ -18,8 +18,8 @@
       </div>
       <div class="com_hot border_bottom">
         <ul>
-          <li><span class="jin">精</span>精华评论（16）<span class="fr"><i class="icon-arrow"></i></span></li>
-          <li><span class="hot">热</span>热门评论（19）<span class="fr"><i class="icon-arrow"></i></span></li>
+          <li @click="$router.push({path:'/commentt2',query:{book:'jin'}})"><span class="jin">精</span>精华评论（16）<span class="fr"><i class="icon-arrow"></i></span></li>
+          <li @click="$router.push({path:'/commentt2',query:{book:'hot'}})"><span class="hot">热</span>热门评论（19）<span class="fr"><i class="icon-arrow"></i></span></li>
         </ul>
         <p class="comment_list" >
           <a href="">全部</a>
@@ -35,6 +35,10 @@
           <div class="user_new">
             <span>灭世邪神</span>
             <span class="user_lv">青铜会员</span>
+            <span class="user_vip">
+              <i>vip</i>
+            </span>
+            <span class="user_author"><i>作者</i></span>
           </div>
           <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
           <p class="comment_time">2017-03-28</p>

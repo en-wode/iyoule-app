@@ -18,6 +18,7 @@ import home from '../views/home/home'
 import catalog from '../views/catalog/catalog'
 import comment from '../components/comment/comment'
 import commentt from '../views/comment/commentt'
+import commentt2 from '../views/comment/commentt2'
 import book from '../views/book/book'
 import bookread from '../views/bookread/bookread'
 import warn from '../views/bookread/book-detail/warn'
@@ -88,6 +89,10 @@ let router = new VueRouter({
         {
           path: '/commentt',
           component: commentt
+        },
+        {
+          path: '/commentt2',
+          component: commentt2
         },
         {
           path: '/catalog',

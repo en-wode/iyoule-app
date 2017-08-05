@@ -88,6 +88,8 @@
             gift: '打赏',
             yuep: '月票',
             commentt: '书评区',
+            jin: '精华评论',
+            hot: '热门评论',
             warn: '章节报错',
             more: '更多设置'
           }
