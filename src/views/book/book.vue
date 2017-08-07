@@ -43,7 +43,7 @@
       <div class="comment">
         <div class="kuai">
           <h2>评论区</h2>
-          <a href="">发表评论</a>
+          <a href="#" @click="showFB">发表评论</a>
         </div>
         <div class="ev_comment kuai">
           <div class="tx">
@@ -195,8 +195,19 @@
 <script type="text/ecmascript-6">
   import transverse from '@/components/transverse-recommend/transverse_recommend'
   export default{
+    data () {
+      return {
+        showpl: false
+      }
+    },
     components: {
       transverse
+    },
+    methods: {
+      showFB: function () {
+        this.showpl = true
+        this.$emit('isshowpl', this.showpl)
+      }
     }
   }
 </script>

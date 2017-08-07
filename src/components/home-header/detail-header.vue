@@ -11,14 +11,18 @@
         <li @click="backHandle"><span class="icon-arrow-left"></span></li>
         <li>{{title}}</li>
       </ul>-->
+      <ul v-if="this.$route.query.book === 'commentt'">
+        <li @click="backHandle"><span class="icon-arrow-left"></span></li>
+        <li>{{book[this.$route.query.book]}}</li>
+        <li @click="showFB">
+          <span class="icon-view"></span>
+        </li>
+      </ul>
       <ul v-else>
         <li @click="backHandle"><span class="icon-arrow-left"></span></li>
         <li>{{book[this.$route.query.book]}}</li>
       </ul>
     </div>
-  <!--<mt-header fixed >
-    <mt-button icon="more" slot="right"></mt-button>
-  </mt-header>-->
 </template>
 
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
@@ -54,6 +58,7 @@
       props: ['title'],
       data () {
         return {
+          showpl: false,
           bang: {
             hit: '点击榜',
             score: '评分榜',
@@ -98,6 +103,10 @@
       methods: {
         backHandle () {
           this.$router.back()
+        },
+        showFB: function () {
+          this.showpl = true
+          this.$emit('isshowpl', this.showpl)
         }
       }
     }

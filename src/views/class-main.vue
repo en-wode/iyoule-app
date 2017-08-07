@@ -1,13 +1,14 @@
 <template lang="html">
   <div>
     <personal v-if="show" @hide='onShow'></personal>
-    <d-head v-if="this.$route.query.bang||this.$route.query.book"></d-head>
+    <fbpl v-if="show2" @hidepl='ishowpl'></fbpl>
+    <d-head v-if="this.$route.query.bang||this.$route.query.book" @isshowpl="ishowpl"></d-head>
     <div v-else>
       <v-head v-if="this.$route.query.class"></v-head>
       <p-head @selectshow='onShow' v-else ></p-head>
     </div>
     <div class="contain">
-      <router-view></router-view>
+      <router-view @isshowpl="ishowpl"></router-view>
     </div>
     <div class="bottom" v-if="this.$route.query.book == 'book'">
       <li><span class="shidu">免费试读</span></li>
@@ -48,6 +49,7 @@
 
 <script type="text/ecmascript-6">
   import head from '../components/home-header/home-header.vue'
+  import fbpl from '../components/fbpl/fbpl'
   import person from '../components/home-header/person-header.vue'
   import detail from '../components/home-header/detail-header.vue'
   import bottom from '../components/bottom/bottom.vue'
@@ -55,7 +57,8 @@
   export default {
     data: function () {
       return {
-        show: false
+        show: false,
+        show2: false
       }
     },
     components: {
@@ -63,11 +66,15 @@
       'p-head': person,
       'd-head': detail,
       'v-bottom': bottom,
-      personal
+      personal,
+      fbpl
     },
     methods: {
       onShow: function (abc) {
         this.show = abc
+      },
+      ishowpl: function (fb) {
+        this.show2 = fb
       }
     }
   }
