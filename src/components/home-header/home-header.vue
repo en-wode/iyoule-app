@@ -2,10 +2,10 @@
     <div class="header">
       <ul>
         <router-link to="/bookcity" tag="li" ><span>首页</span></router-link>
-        <li  @click="$router.push({path:'/bookcity',query:{class:'nan'}})"><span class="head-active">男频</span></li>
-        <li  @click="$router.push({path:'/bookcity',query:{class:'nv'}})"><span>女频</span></li>
-        <li @click="$router.push({path:'/free',query:{class:'free'}})"><span>免费</span></li>
-        <li  @click="$router.push({path:'/classify',query:{class:'classify'}})"><span>分类</span></li>
+        <li  @click="$router.push({path:'/bookcity',query:{class:'nan'}})"><span :class="[aclick === 'nan'? 'head-active':'']">男频</span></li>
+        <li  @click="$router.push({path:'/bookcity',query:{class:'nv'}})"><span :class="[aclick === 'nv'? 'head-active':'']">女频</span></li>
+        <li @click="$router.push({path:'/free',query:{class:'free'}})"><span :class="[aclick === 'free'? 'head-active':'']">免费</span></li>
+        <li  @click="$router.push({path:'/classify',query:{class:'classify'}})"><span :class="[aclick === 'classify'? 'head-active':'']">分类</span></li>
         <router-link class="search" tag="li" to="/search">
           <span class="icon-search"></span>
         </router-link>
@@ -50,5 +50,10 @@
 
 <script type="text/ecmascript-6">
     export default{
+      data () {
+        return {
+          aclick: this.$route.query.class
+        }
+      }
     }
 </script>

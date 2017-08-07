@@ -43,8 +43,9 @@ let router = new VueRouter({
   linkActiveClass: 'is-active',
   routes: [
     {
-      path: '',
-      component: main
+      path: '/',
+      component: main,
+      redirect: '/home'
     },
     {
       path: '/main',
