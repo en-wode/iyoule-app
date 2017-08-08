@@ -22,7 +22,7 @@
       </p>
     </div>
     <div class="border_bottom book_handle">
-     <li @click="$router.push({path:'/operation',query:{book:'flower'}})">
+     <li @click="$router.push({path:'/flower',query:{book:'flower'}})">
        <i class="icon-flower red"></i>
        <span>鲜花</span>
      </li>
@@ -34,7 +34,7 @@
         <i class="icon-yuep" style="color: #fc4b4b"></i>
         <span>投月票</span>
       </li>
-      <li>
+      <li @click="showfx">
         <i class="icon-share" style="color: #f29c2e"></i>
         <span>分享</span>
       </li>
@@ -123,16 +123,22 @@
       text-overflow ellipsis
       white-space nowrap;
     .book_pf
+      background url("../../views/book/pf-bg.png")
       position absolute
       right 20px
       top 20px
       font-size 12px
+      color: white;
+      width: 55px;
+      height: 43px;
+      border-radius  0 0 6px 6px
       p
-        text-align center
-        width auto
-        line-height 16px
+        text-align right
+        width 40px
+        line-height 18px
+        margin 0 auto
         &:first-child
-          border-bottom 2px solid red
+          border-bottom 1px solid white
         span
           font-size 16px
     .brief
@@ -198,7 +204,8 @@
     data () {
       return {
         showpl: false,
-        showpl2: false
+        showpl2: false,
+        showfx3: false
       }
     },
     components: {
@@ -212,6 +219,10 @@
       showFB2: function () {
         this.showpl2 = true
         this.$emit('isshowpl2', this.showpl2)
+      },
+      showfx: function () {
+        this.showfx3 = true
+        this.$emit('isshowfx2', this.showfx3)
       }
     }
   }

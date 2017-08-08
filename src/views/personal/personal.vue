@@ -49,7 +49,7 @@
   @import "../../common/stylus/mixin.styl"
   .back
     width  100%
-    position absolute
+    position fixed
     top 0
     left 0
     height 100%

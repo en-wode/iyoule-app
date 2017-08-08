@@ -9,40 +9,28 @@
           <div class="paim">
             <li>
               <p>NO.40</p>
-              <p class="pm">月排名</p>
+              <p class="pm">鲜花榜</p>
             </li>
             <li>
               <p>NO.40</p>
-              <p class="pm">本月月票</p>
+              <p class="pm">鲜花数</p>
             </li>
           </div>
         </div>
       </div>
       <div class="num rank border_bottom">
-        <p><span>还差4票超过前一名</span> <span class="fr">剩余月票:0票</span></p>
-        <ul>
-          <li>1票</li>
-          <li>5票</li>
-          <li>10票</li>
-          <li>50票</li>
-          <li>
-            <span class="ticket">4票</span>
-            <span>（超过前一名）</span>
-          </li>
-          <li>
-            <span class="ticket">5682票</span>
-            <span>（成为粉丝第一）</span>
-          </li>
-        </ul>
+        <p><span>剩余鲜花:0朵</span> </p>
+        <div class="page-picker-wrapper">
+          <mt-picker :slots="numberSlot" @change="onNumberChange" :visible-item-count="3"></mt-picker>
+        </div>
       </div>
       <div class="jilu">
-        <p>投票：5票（没有足够的月票，100有乐币=1票）</p>
-        <p>余额：0有乐币（没有足够的有乐币）133逗币</p>
-        <input type="button" value="余额不足，请充值">
-        <p class="tp_titlt">投票记录</p>
+
+        <input type="button" value="确认赠送">
+        <p class="tp_titlt">赠送记录</p>
         <div class="jl_detail">
           <img src="../../components/operation/baser_cover.png" alt="" width="30" height="30">
-          <span>199***654刚刚投了5票</span>
+          <span>199***654刚刚赠送了5朵鲜花</span>
         </div>
       </div>
     </div>
@@ -142,5 +130,21 @@
 
 <script type="text/ecmascript-6">
     export default{
+      data () {
+        return {
+          number: 0,
+          numberSlot: [{
+            flex: 1,
+            defaultIndex: 0,
+            values: [0, 1, 2, 3, 4, 5, 6],
+            className: 'slot1'
+          }]
+        }
+      },
+      methods: {
+        onNumberChange (picker, values) {
+          this.number = values[0]
+        }
+      }
     }
 </script>

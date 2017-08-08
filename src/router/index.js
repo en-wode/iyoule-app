@@ -27,6 +27,7 @@ import mulu from '../views/bookread/book-detail/mulu'
 import download from '../views/bookread/book-detail/download'
 import bookcity from '../components/bookcity/bookcity'
 import operation from '../components/operation/operation'
+import flower from '../components/operation/flower'
 import detail from '../components/paihang/paihang-detail/detail'
 import classify from '../components/classify/classify'
 import free from '../components/free/free'
@@ -102,6 +103,10 @@ let router = new VueRouter({
         {
           path: '/operation',
           component: operation
+        },
+        {
+          path: '/flower',
+          component: flower
         },
         {
           path: '/warn',

@@ -9,13 +9,14 @@
       <p-head @selectshow='onShow' v-else ></p-head>
     </div>
     <div class="contain">
-      <router-view @isshowpl="ishowpl" @isshowpl2="ishowpl2"></router-view>
+      <router-view @isshowpl="ishowpl" @isshowpl2="ishowpl2" @isshowfx2="hideffx"></router-view>
     </div>
     <div class="bottom" v-if="this.$route.query.book == 'book'">
       <li><span class="shidu">免费试读</span></li>
       <li><span class="down">全本下载</span></li>
     </div>
       <v-bottom v-if="this.$route.query.book == null"></v-bottom>
+    <share @hidefx="hideffx" v-show="show4"></share>
   </div>
 </template>
 
@@ -52,6 +53,7 @@
   import head from '../components/home-header/home-header.vue'
   import fbpl from '../components/fbpl/fbpl'
   import hfpl from '../components/fbpl/hfpl'
+  import share from '../components/share/share'
   import person from '../components/home-header/person-header.vue'
   import detail from '../components/home-header/detail-header.vue'
   import bottom from '../components/bottom/bottom.vue'
@@ -61,7 +63,8 @@
       return {
         show: false,
         show2: false,
-        show3: false
+        show3: false,
+        show4: false
       }
     },
     components: {
@@ -71,7 +74,8 @@
       'v-bottom': bottom,
       personal,
       fbpl,
-      hfpl
+      hfpl,
+      share
     },
     methods: {
       onShow: function (abc) {
@@ -82,6 +86,9 @@
       },
       ishowpl2: function (hf) {
         this.show3 = hf
+      },
+      hideffx: function (fx) {
+        this.show4 = fx
       }
     }
   }
