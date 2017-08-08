@@ -2,13 +2,14 @@
   <div>
     <personal v-if="show" @hide='onShow'></personal>
     <fbpl v-if="show2" @hidepl='ishowpl'></fbpl>
+    <hfpl v-if="show3" @hidepl2='ishowpl2'></hfpl>
     <d-head v-if="this.$route.query.bang||this.$route.query.book" @isshowpl="ishowpl"></d-head>
     <div v-else>
       <v-head v-if="this.$route.query.class"></v-head>
       <p-head @selectshow='onShow' v-else ></p-head>
     </div>
     <div class="contain">
-      <router-view @isshowpl="ishowpl"></router-view>
+      <router-view @isshowpl="ishowpl" @isshowpl2="ishowpl2"></router-view>
     </div>
     <div class="bottom" v-if="this.$route.query.book == 'book'">
       <li><span class="shidu">免费试读</span></li>
@@ -50,6 +51,7 @@
 <script type="text/ecmascript-6">
   import head from '../components/home-header/home-header.vue'
   import fbpl from '../components/fbpl/fbpl'
+  import hfpl from '../components/fbpl/hfpl'
   import person from '../components/home-header/person-header.vue'
   import detail from '../components/home-header/detail-header.vue'
   import bottom from '../components/bottom/bottom.vue'
@@ -58,7 +60,8 @@
     data: function () {
       return {
         show: false,
-        show2: false
+        show2: false,
+        show3: false
       }
     },
     components: {
@@ -67,7 +70,8 @@
       'd-head': detail,
       'v-bottom': bottom,
       personal,
-      fbpl
+      fbpl,
+      hfpl
     },
     methods: {
       onShow: function (abc) {
@@ -75,6 +79,9 @@
       },
       ishowpl: function (fb) {
         this.show2 = fb
+      },
+      ishowpl2: function (hf) {
+        this.show3 = hf
       }
     }
   }

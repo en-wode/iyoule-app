@@ -54,7 +54,7 @@
             <span class="user_lv">青铜会员</span>
           </div>
           <p class="kuai" @click="$router.push({path:'/comment',query:{book:'comment'}})">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
-          <p class="comment_time">2017-03-28  <i class="icon-comment2 fr"><span>6</span></i> <i class="icon-zan fr"><span>6</span></i></p>
+          <p class="comment_time">2017-03-28  <i class="icon-comment2 fr" @click="showFB2"><span>2</span></i> <i class="icon-zan fr" ><span>6</span></i></p>
         </div>
         <div class="ev_comment kuai">
           <div class="tx">
@@ -197,7 +197,8 @@
   export default{
     data () {
       return {
-        showpl: false
+        showpl: false,
+        showpl2: false
       }
     },
     components: {
@@ -207,6 +208,10 @@
       showFB: function () {
         this.showpl = true
         this.$emit('isshowpl', this.showpl)
+      },
+      showFB2: function () {
+        this.showpl2 = true
+        this.$emit('isshowpl2', this.showpl2)
       }
     }
   }

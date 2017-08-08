@@ -8,7 +8,7 @@
     </div>
 </template>
 
-<style lang="stylus" rel="stylesheet/stylus" type="text/stylus">
+<style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   .fb
     width 100%
     height 100%
