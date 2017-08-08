@@ -111,7 +111,7 @@
       border-right 2px solid #ff4c4c
       display inline-block
     ul
-      width 30%
+      width 31%
       height 105px
       margin-top 23px
       position relative

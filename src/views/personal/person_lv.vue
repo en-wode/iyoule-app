@@ -2,29 +2,38 @@
   <div>
     <d-head></d-head>
     <div class="personal">
-      <div class="consume">
+      <div class="consume tx">
         <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="82" height="82">
         <p class="lv">黑铁会员</p>
       </div>
       <div class="border_bottom consume">
         <h3 class="red">当前等级福利</h3>
         <div class="fuli_detail">
-          <p>鲜花</p>
-          <p class="flower">每日可送7朵鲜花</p>
+          <i class="icon-flower"></i>
+          <div class="rt">
+            <p>鲜花</p>
+            <p class="flower">每日可送7朵鲜花</p>
+          </div>
         </div>
       </div>
       <div class="border_bottom consume">
         <h3>黑铁会员福利</h3>
         <div class="fuli_detail">
-          <p>鲜花</p>
-          <p class="flower">每日可送7朵鲜花</p>
+          <i class="icon-flower"></i>
+          <div class="rt">
+            <p>鲜花</p>
+            <p class="flower">每日可送7朵鲜花</p>
+          </div>
         </div>
       </div>
       <div class="border_bottom consume">
         <h3>白银会员福利</h3>
         <div class="fuli_detail">
-          <p>鲜花</p>
-          <p class="flower">每日可送7朵鲜花</p>
+          <i class="icon-flower"></i>
+          <div class="rt">
+            <p>鲜花</p>
+            <p class="flower">每日可送7朵鲜花</p>
+          </div>
         </div>
       </div>
     </div>
@@ -50,11 +59,14 @@
     overflow hidden
     background #fffefd
     z-index 100
+    .tx
+      padding 28px 0 12px 0
+      background #f5f0f0
     .consume
       width 100%
       img
         display block
-        margin 18px auto 12px auto
+        margin 0 auto 12px auto
         border-radius 50%
       .lv
         width 100%
@@ -67,10 +79,17 @@
         border-1px(rgba(245,240,240,0.9))
       .fuli_detail
         width 90%
-        margin 12px auto
+        margin 16px auto
+        i
+          display inline-block
+          color red
+          vertical-align: 7px
+          margin-right 8px
+        .rt
+          display inline-block
         .flower
           margin-top 7px
           color #b6a7a7
-
+          font-size 14px
 
 </style>

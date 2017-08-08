@@ -18,7 +18,7 @@
           <span class="icon-view"></span>
         </li>
       </ul>
-      <ul v-else>
+      <ul v-if="this.$route.query.book = !'commentt'&& this.$route.query.book">
         <li @click="backHandle"><span class="icon-arrow-left"></span></li>
         <li>{{book[this.$route.query.book]}}</li>
       </ul>

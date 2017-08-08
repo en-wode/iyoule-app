@@ -3,7 +3,7 @@
     <h1>主编推荐</h1>
     <ul class="fuse_top">
       <li>
-        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110">
+        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110" class="yiny">
         <h2>修罗天帝</h2>
         <p>八年前，雷霆古城一夜惊变，少城主秦明压入青云宗为仆，二十万民众赶进大青云山为奴。八年后，翠玲入武</p>
         <span class="fl">实验小白鼠</span>
@@ -13,15 +13,15 @@
     </ul>
     <ul class="fuse_bottom">
       <li>
-        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110">
+        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110" class="yiny">
         <span>超级狂暴吞噬</span>
       </li>
       <li class="tc">
-        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110">
+        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110" class="yiny">
         <span>超级狂暴吞噬</span>
       </li>
       <li>
-        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110">
+        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110" class="yiny">
         <span>超级狂暴吞噬</span>
       </li>
     </ul>
@@ -34,16 +34,17 @@
   }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus" type="text/stylus">
+<style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   .vertical
-    width 90%
+    width 100%
     margin 0 auto
     h1
-      margin 20px 0 0 0
+      margin 20px 0 24px 18px
       padding-right 9px
       display inline-block
       border-right 2px solid #ff4c4c
     .fuse_top
+      margin 0 18px 24px 18px
       margin-bottom 0px
       li
         height 110px
