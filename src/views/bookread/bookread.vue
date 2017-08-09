@@ -189,6 +189,7 @@
     </div>
 </template>
 <script type="text/ecmascript-6">
+  import $ from 'jquery'
   import { Toast } from 'mint-ui'
   export default{
     data: function () {
@@ -262,6 +263,11 @@
         }
         this.chapterValue++
       }
+    },
+    mounted () {
+      $('.mode').click(function () {
+        alert(1)
+      })
     }
   }
 </script>

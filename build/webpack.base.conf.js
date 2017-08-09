@@ -1,8 +1,8 @@
 var path = require('path')
 var utils = require('./utils')
+var webpack = require("webpack")
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
-
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -25,6 +25,13 @@ module.exports = {
       '@': resolve('src')
     }
   },
+  plugins: [
+  new webpack.optimize.CommonsChunkPlugin('common.js'),
+  new webpack.ProvidePlugin({
+    jQuery: "jquery",
+    $: "jquery"
+  })
+],
   module: {
     rules: [
       {
