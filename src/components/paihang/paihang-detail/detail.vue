@@ -22,14 +22,13 @@
         <div class="show">字数 <span>50w以下</span><span>50-100w</span></div>
       </div>
     </div>
-    <ul>
+    <ul @click="hidpx">
       <li>
         <img src="../../../components/paihang/paihang-detail/baser_cover.png" alt="" width="88" height="110">
         <h2>修罗天帝{{this.$route.query.class}}123123</h2>
         <p>八年前，雷霆古城一夜惊变，少城主秦明压入青云宗为仆，二十万民众赶进大青云山为奴。八年后，翠玲入武</p>
         <span class="fl">实验小白鼠</span>
         <span class="fr label">爽文、热血</span>
-
       </li>
       <li>
         <img src="../../../components/paihang/paihang-detail/baser_cover.png" alt="" width="88" height="110">
@@ -82,6 +81,10 @@
           this.paixu = false
           this.shaixuan = true
         }
+      },
+      hidpx () {
+        this.paixu = false
+        this.shaixuan = false
       }
     }
   }
@@ -106,9 +109,10 @@
       .select
         width 100%
         position absolute!important
-        top 46px
+        top 44px
         background white
         border-1px(#f5f0f0)
+        box-shadow: 0px 3px 7px #bfbfbf
         .show
           width 90%
           margin 0 auto
