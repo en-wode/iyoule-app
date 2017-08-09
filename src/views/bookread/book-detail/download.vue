@@ -1,6 +1,6 @@
 <template lang="html">
     <div>
-      <d-head title="下载"></d-head>
+      <d-head title="下载" name="下载"></d-head>
       <div class="contain">
         <mt-checklist
           v-model="value"

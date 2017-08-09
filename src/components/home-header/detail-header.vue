@@ -7,7 +7,7 @@
           <span class="icon-search"></span>
         </router-link>
       </ul>
-      <ul v-if="title == '书名'">
+      <ul v-if="title">
         <li @click="backHandle"><span class="icon-arrow-left"></span></li>
         <li>{{name}}</li>
       </ul>

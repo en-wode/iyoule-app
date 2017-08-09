@@ -136,6 +136,27 @@
 <script type="text/ecmascript-6">
   import { Toast } from 'mint-ui'
   export default {
+    props: {
+      homebook: {
+        type: Object
+      }
+    },
+    data () {
+      return {
+        projects: []
+      }
+    },
+    created () {
+      this.$http.get('http://easy-mock.com/mock/598a7ddda1d30433d85a4cd2/example_1502248413615/query')
+        .then(function (response) {
+          this.projects = response.data.data
+          console.log(response)
+          console.log(this.projects)
+        }.bind(this))
+        .catch(function (error) {
+          console.log(error)
+        })
+    },
     methods: {
       tip () {
         Toast('签到成功')
