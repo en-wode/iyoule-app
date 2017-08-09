@@ -265,8 +265,14 @@
       }
     },
     mounted () {
-      $('.mode').click(function () {
-        alert(1)
+      this.$nextTick(() => {
+        $('.mode').click({
+          width: 922,
+          height: 600,
+          elevation: 50,
+          gradients: true,
+          autoCenter: true
+        })
       })
     }
   }
