@@ -61,15 +61,17 @@
         </ul>
       </div>
       <div class="book_bottom" v-show="show1 && show5 === false && show3 === false">
-        <div class="book_detail">
-          <div class="book_back">
-            <i class="icon-withdraw"></i>
+        <transition name="fade">
+          <div class="book_detail">
+            <div class="book_back">
+              <i class="icon-withdraw"></i>
+            </div>
+            <div class="book_now">
+              <p>第365章 沙海</p>
+              <p>{{chapterValue}}%</p>
+            </div>
           </div>
-          <div class="book_now">
-            <p>第365章 沙海</p>
-            <p>65.25%</p>
-          </div>
-        </div>
+        </transition>
         <div class="range">
           <mt-range
             v-model="chapterValue"
@@ -77,8 +79,8 @@
             :max="100"
             :step="1"
             :bar-height="2">
-            <div slot="start">0</div>
-            <div slot="end">100</div>
+            <div slot="start" @click="book_pre">上一章</div>
+            <div slot="end" @click="book_next">下一章</div>
           </mt-range>
         </div>
         <div class="caozuo">
@@ -109,7 +111,7 @@
                 <mt-range
                 v-model="rangeValue"
                 :min="1"
-                :max="90"
+                :max="100"
                 :step="1"
                 :bar-height="2">
                 </mt-range>
@@ -118,7 +120,7 @@
               <span>系统</span>
             </div>
           </div>
-          <div class="font"><a href="">A-</a><span>58</span><a href="">A+</a><span class="fr lt">字体</span></div>
+          <div class="font"><a href="#">A-</a><span>58</span><a href="#">A+</a><span class="fr lt">字体</span></div>
           <div class="background">
             <li>
               <span>✔</span>
@@ -137,8 +139,8 @@
         <div class="fen2" v-show="shezhi2">
           <div class="space">
             <li ><i class="icon-space_big"></i></li>
-            <li ><i class="icon-space_big"></i></li>
-            <li><i class="icon-space_big"></i></li>
+            <li ><i class="icon-space_middle"></i></li>
+            <li><i class="icon-space_small"></i></li>
             <li ><i class="icon-dege"></i></li>
           </div>
           <div class="mode">
@@ -186,6 +188,83 @@
       </div>
     </div>
 </template>
+<script type="text/ecmascript-6">
+  import { Toast } from 'mint-ui'
+  export default{
+    data: function () {
+      return {
+        rangeValue: 1,
+        chapterValue: 1,
+        show1: false,
+        show2: false,
+        show3: false,
+        show4: false,
+        show5: false,
+        show6: false,
+        shezhi2: false,
+        shezhi1: true,
+        value1: false,
+        zhangjie: false
+      }
+    },
+    methods: {
+      toggle1: function (select) {
+        if (select === 'show1') {
+          this.show1 = !this.show1
+          this.show2 = false
+          this.show3 = false
+          this.show4 = false
+          this.show5 = false
+        }
+        if (select === 'show4') {
+          this.show4 = !this.show4
+          this.show2 = false
+          this.show3 = false
+        }
+        if (select === 'show2') {
+          this.show2 = !this.show2
+          this.show3 = false
+        }
+        if (select === 'show3') {
+          this.show3 = !this.show3
+          this.show2 = false
+        }
+        if (select === 'show5') {
+          this.show5 = !this.show5
+          this.show2 = false
+        }
+        if (select === 'shezhi1') {
+          this.shezhi1 = true
+          this.shezhi2 = false
+        }
+        if (select === 'shezhi2') {
+          this.shezhi2 = true
+          this.shezhi1 = false
+        }
+      },
+      backHandle () {
+        this.$router.back()
+      },
+      tip (infor) {
+        Toast(infor)
+      },
+      book_pre () {
+        if (this.chapterValue === 1) {
+          Toast('已经是第一章了')
+          return
+        }
+        this.chapterValue--
+      },
+      book_next () {
+        if (this.chapterValue === 100) {
+          Toast('已经是最后一章了')
+          return
+        }
+        this.chapterValue++
+      }
+    }
+  }
+</script>
 
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   @import "../../common/stylus/mixin.styl"
@@ -320,6 +399,12 @@
         background #2e2727
         display flex
         border-radius 4px
+        .fade-enter-active
+          transition: all .3s ease
+        .fade-leave-active
+          transition: all .3s ease
+        .fade-enter, .fade-leave-to
+          transform: translateX(-10px)
         .book_back
           flex 1
           text-align center
@@ -334,7 +419,9 @@
             line-height 25px
             text-align center
             font-size 12px
-
+      .range
+        width 90%
+        margin 0 auto
     .caozuo
       margin-top 20px
       display flex
@@ -482,65 +569,3 @@
 
 </style>
 
-<script type="text/ecmascript-6">
-  import { Toast } from 'mint-ui'
-  export default{
-    data: function () {
-      return {
-        rangeValue: 1,
-        chapterValue: 1,
-        show1: false,
-        show2: false,
-        show3: false,
-        show4: false,
-        show5: false,
-        show6: false,
-        shezhi2: false,
-        shezhi1: true,
-        value1: false
-      }
-    },
-    methods: {
-      toggle1: function (select) {
-        if (select === 'show1') {
-          this.show1 = !this.show1
-          this.show2 = false
-          this.show3 = false
-          this.show4 = false
-          this.show5 = false
-        }
-        if (select === 'show4') {
-          this.show4 = !this.show4
-          this.show2 = false
-          this.show3 = false
-        }
-        if (select === 'show2') {
-          this.show2 = !this.show2
-          this.show3 = false
-        }
-        if (select === 'show3') {
-          this.show3 = !this.show3
-          this.show2 = false
-        }
-        if (select === 'show5') {
-          this.show5 = !this.show5
-          this.show2 = false
-        }
-        if (select === 'shezhi1') {
-          this.shezhi1 = true
-          this.shezhi2 = false
-        }
-        if (select === 'shezhi2') {
-          this.shezhi2 = true
-          this.shezhi1 = false
-        }
-      },
-      backHandle () {
-        this.$router.back()
-      },
-      tip (infor) {
-        Toast(infor)
-      }
-    }
-  }
-</script>

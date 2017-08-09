@@ -9,18 +9,22 @@
         <span class="sex_detail" @click="isshow('paixu')">排序方式</span>
         <span class="sex_detail" @click="isshow('shaixuan')">筛选</span>
       </div>
+      <transition name="slide">
       <div class="select" v-show="paixu">
-        <div class="show">按人气<span class="icon-arrow fr"></span></div>
-        <div class="show">按收藏<span class="icon-arrow fr"></span></div>
-        <div class="show">按字数<span class="icon-arrow fr"></span></div>
-        <div class="show">按更新<span class="icon-arrow fr"></span></div>
-      </div>
+          <div class="show">按人气<span class="icon-arrow fr"></span></div>
+          <div class="show">按收藏<span class="icon-arrow fr"></span></div>
+          <div class="show">按字数<span class="icon-arrow fr"></span></div>
+          <div class="show">按更新<span class="icon-arrow fr"></span></div>
+        </div>
+      </transition>
+      <transition name="slide">
       <div class="select" v-show="shaixuan">
-        <div class="show">状态 <span>连载</span><span>已完结</span> </div>
-        <div class="show">价格 <span>连载</span><span>已完结</span><span>连载</span></div>
-        <div class="show">更新 <span>三天内</span><span>一周内</span></div>
-        <div class="show">字数 <span>50w以下</span><span>50-100w</span></div>
-      </div>
+          <div class="show">状态 <span>连载</span><span>已完结</span> </div>
+          <div class="show">价格 <span>连载</span><span>已完结</span><span>连载</span></div>
+          <div class="show">更新 <span>三天内</span><span>一周内</span></div>
+          <div class="show">字数 <span>50w以下</span><span>50-100w</span></div>
+        </div>
+      </transition>
     </div>
     <ul @click="hidpx">
       <li>
@@ -92,10 +96,17 @@
 
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   @import "../../../common/stylus/mixin.styl"
+
   .detail
     .sex
       border-bottom 1px solid #f5f0f0
       position relative
+      .slide-enter-active
+        transition: all .3s ease;
+      .slide-leave-active
+        transition: all 0s ease;
+      .slide-enter, .slide-leave-to
+        transform: translateY(10px)
       .selec-top
         height 41px
         box-shadow 0 0 3px 3px #f0efee

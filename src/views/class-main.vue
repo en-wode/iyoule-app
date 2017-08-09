@@ -1,6 +1,8 @@
 <template lang="html">
   <div>
-    <personal v-if="show" @hide='onShow'></personal>
+    <transition name="slide">
+      <personal v-if="show" @hide='onShow'></personal>
+    </transition>
     <fbpl v-if="show2" @hidepl='ishowpl'></fbpl>
     <hfpl v-if="show3" @hidepl2='ishowpl2'></hfpl>
     <d-head v-if="this.$route.query.bang||this.$route.query.book" @isshowpl="ishowpl"></d-head>
@@ -21,6 +23,12 @@
 </template>
 
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
+  .slide-enter-active
+    transition: all .3s ease;
+  .slide-leave-active
+    transition: all .3s ease;
+  .slide-enter, .slide-leave-to
+    transform: translateX(-100%)
   .bottom
     position fixed
     left 0

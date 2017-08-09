@@ -1,13 +1,15 @@
 <template lang="html">
     <div>
-      <div class="qiandao-tip">
-        <img src="../home/register.png" alt="" width="28" height="28">
-        <p>
-          <span>连续签到领逗币兑换神秘礼物！</span>
-          <span>每天签到都可获取有乐豆</span>
-        </p>
-        <input type="button" value="立即签到" @click="$router.push({path:'/qiandao'})">
-      </div>
+      <transition name="slide-fade">
+        <div class="qiandao-tip" v-show="qd">
+          <img src="../home/register.png" alt="" width="28" height="28">
+          <p>
+            <span>连续签到领逗币兑换神秘礼物！</span>
+            <span>每天签到都可获取有乐豆</span>
+          </p>
+          <input type="button" value="立即签到" @click="$router.push({path:'/qiandao'})">
+        </div>
+      </transition>
       <div class="home_contain" ref="home_contain">
         <ul>
           <li @click="$router.push({path:'/book',query:{book:'book'}})">
@@ -72,6 +74,12 @@
 </template>
 
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
+  .slide-fade-enter-active
+    transition: all .3s ease;
+  .slide-fade-leave-active
+    transition: all .3s ease;
+  .slide-fade-enter, .slide-fade-leave-to
+    transform: translateX(-10px)
   .contain
     width 100%
     overflow hidden;
@@ -143,7 +151,8 @@
     },
     data () {
       return {
-        projects: []
+        projects: [],
+        qd: true
       }
     },
     created () {
