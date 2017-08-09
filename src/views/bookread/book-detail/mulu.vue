@@ -1,6 +1,6 @@
 <template lang="html">
     <div>
-      <d-head title="书名"></d-head>
+      <d-head title="书名" name="沙海"></d-head>
       <div class="contain">
         <mt-navbar class="page-part" v-model="selected">
           <mt-tab-item id="1">目录</mt-tab-item>

@@ -7,10 +7,10 @@
           <span class="icon-search"></span>
         </router-link>
       </ul>
-      <!--<ul v-if="title == '下载'">
+      <ul v-if="title == '书名'">
         <li @click="backHandle"><span class="icon-arrow-left"></span></li>
-        <li>{{title}}</li>
-      </ul>-->
+        <li>{{name}}</li>
+      </ul>
       <ul v-if="this.$route.query.book === 'commentt'">
         <li @click="backHandle"><span class="icon-arrow-left"></span></li>
         <li>{{book[this.$route.query.book]}}</li>
@@ -55,7 +55,7 @@
 
 <script type="text/ecmascript-6">
     export default{
-      props: ['title'],
+      props: ['title', 'name'],
       data () {
         return {
           showpl: false,
