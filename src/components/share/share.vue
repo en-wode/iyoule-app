@@ -1,6 +1,6 @@
 <template lang="html">
-    <div class="shareall" @touchmove.prevent v-show="showshare" @click="sshare">
-      <div class="share">
+    <div class="shareall" @touchmove.prevent v-show="showshare" @click="sshare" >
+      <div class="share" @click.stop="">
         <div class="share_contain">
           <h2>分享到</h2>
           <div class="ob">

@@ -144,7 +144,7 @@
     .brief
       color #998282
       line-height 22px
-      font-size 16px
+      font-size 14px
       i
         margin-right 8px
   .book_handle

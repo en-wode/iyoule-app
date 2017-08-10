@@ -27,93 +27,165 @@
           <a  @click="isshow('3')">看法</a>
         </p>
       </div>
-      <div class="comment" v-show="show == '1'">
-        <div class="page-loadmore-wrapper" ref="wrapper">
-          <mt-loadmore :bottom-method="loadBottom" @bottom-status-change="handleBottomChange" :bottom-all-loaded="allLoaded" ref="loadmore">
-            <div class="ev_comment kuai">
-              <div class="tx">
-                <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+      <transition name="slide">
+        <div class="comment" v-show="show == '1'">
+          <div class="page-loadmore-wrapper" ref="wrapper">
+            <mt-loadmore :bottom-method="loadBottom" @bottom-status-change="handleBottomChange" :bottom-all-loaded="allLoaded" ref="loadmore">
+              <div class="ev_comment kuai">
+                <div class="tx">
+                  <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+                </div>
+                <div class="user_new">
+                  <span>灭世邪神</span>
+                  <span class="user_lv">青铜会员</span>
+                  <span class="user_vip">
+                    <i>vip</i>
+                  </span>
+                  <span class="user_author"><i>作者</i></span>
+                </div>
+                <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
+                <p class="comment_time">2017-03-28</p>
               </div>
-              <div class="user_new">
-                <span>灭世邪神</span>
-                <span class="user_lv">青铜会员</span>
-                <span class="user_vip">
-                  <i>vip</i>
-                </span>
-                <span class="user_author"><i>作者</i></span>
+              <div class="ev_comment kuai">
+                <div class="tx">
+                  <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+                </div>
+                <div class="user_new">
+                  <span>灭世邪神</span>
+                  <span class="user_lv">青铜会员</span>
+                  <span class="user_vip">
+                    <i>vip</i>
+                  </span>
+                  <span class="user_author"><i>作者</i></span>
+                </div>
+                <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
+                <p class="comment_time">2017-03-28</p>
               </div>
-              <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
-              <p class="comment_time">2017-03-28</p>
-            </div>
-            <div class="ev_comment kuai">
-              <div class="tx">
-                <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+              <div class="ev_comment kuai">
+                <div class="tx">
+                  <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+                </div>
+                <div class="user_new">
+                  <span>灭世邪神</span>
+                  <span class="user_lv">青铜会员</span>
+                  <span class="user_vip">
+                    <i>vip</i>
+                  </span>
+                  <span class="user_author"><i>作者</i></span>
+                </div>
+                <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
+                <p class="comment_time">2017-03-28</p>
               </div>
-              <div class="user_new">
-                <span>灭世邪神</span>
-                <span class="user_lv">青铜会员</span>
-                <span class="user_vip">
-                  <i>vip</i>
-                </span>
-                <span class="user_author"><i>作者</i></span>
+              <div class="ev_comment kuai">
+                <div class="tx">
+                  <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+                </div>
+                <div class="user_new">
+                  <span>灭世邪神</span>
+                  <span class="user_lv">青铜会员</span>
+                  <span class="user_vip">
+                    <i>vip</i>
+                  </span>
+                  <span class="user_author"><i>作者</i></span>
+                </div>
+                <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
+                <p class="comment_time">2017-03-28</p>
               </div>
-              <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
-              <p class="comment_time">2017-03-28</p>
-            </div>
-            <div class="ev_comment kuai">
-              <div class="tx">
-                <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
-              </div>
-              <div class="user_new">
-                <span>灭世邪神</span>
-                <span class="user_lv">青铜会员</span>
-                <span class="user_vip">
-                  <i>vip</i>
-                </span>
-                <span class="user_author"><i>作者</i></span>
-              </div>
-              <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
-              <p class="comment_time">2017-03-28</p>
-            </div>
-            <div class="ev_comment kuai">
-              <div class="tx">
-                <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
-              </div>
-              <div class="user_new">
-                <span>灭世邪神</span>
-                <span class="user_lv">青铜会员</span>
-                <span class="user_vip">
-                  <i>vip</i>
-                </span>
-                <span class="user_author"><i>作者</i></span>
-              </div>
-              <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
-              <p class="comment_time">2017-03-28</p>
-            </div>
-          </mt-loadmore>
-        </div>
-      </div>
-      <div class="comment" v-show="show == '3'">
-        <div class="ev_comment kuai">
-          <div class="tx">
-            <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+            </mt-loadmore>
           </div>
-          <div class="user_new">
-            <span>灭世邪神</span>
-            <span class="user_lv">青铜会员</span>
-            <span class="user_vip">
-              <i>vip</i>
-            </span>
-            <span class="user_author"><i>作者</i></span>
-          </div>
-          <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
-          <p class="comment_time">2017-03-28</p>
-          <p class="duanluo">
-            【第九章 终极幽灵要】
-            <span>可沈飞转念一想，这劣药大笔可不是平时的啊阿达安抚安抚是否啊</span>
-          </p>
         </div>
-      </div>
+      </transition>
+      <transition name="slide">
+        <div class="comment" v-show="show == '2'">
+          <div class="page-loadmore-wrapper" ref="wrapper">
+            <mt-loadmore :bottom-method="loadBottom" @bottom-status-change="handleBottomChange" :bottom-all-loaded="allLoaded" ref="loadmore">
+              <div class="ev_comment kuai">
+                <div class="tx">
+                  <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+                </div>
+                <div class="user_new">
+                  <span>灭世邪神</span>
+                  <span class="user_lv">青铜会员</span>
+                  <span class="user_vip">
+                    <i>vip</i>
+                  </span>
+                  <span class="user_author"><i>作者</i></span>
+                </div>
+                <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
+                <p class="comment_time">2017-03-28</p>
+              </div>
+              <div class="ev_comment kuai">
+                <div class="tx">
+                  <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+                </div>
+                <div class="user_new">
+                  <span>灭世邪神</span>
+                  <span class="user_lv">青铜会员</span>
+                  <span class="user_vip">
+                    <i>vip</i>
+                  </span>
+                  <span class="user_author"><i>作者</i></span>
+                </div>
+                <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
+                <p class="comment_time">2017-03-28</p>
+              </div>
+              <div class="ev_comment kuai">
+                <div class="tx">
+                  <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+                </div>
+                <div class="user_new">
+                  <span>灭世邪神</span>
+                  <span class="user_lv">青铜会员</span>
+                  <span class="user_vip">
+                    <i>vip</i>
+                  </span>
+                  <span class="user_author"><i>作者</i></span>
+                </div>
+                <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
+                <p class="comment_time">2017-03-28</p>
+              </div>
+              <div class="ev_comment kuai">
+                <div class="tx">
+                  <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+                </div>
+                <div class="user_new">
+                  <span>灭世邪神</span>
+                  <span class="user_lv">青铜会员</span>
+                  <span class="user_vip">
+                    <i>vip</i>
+                  </span>
+                  <span class="user_author"><i>作者</i></span>
+                </div>
+                <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
+                <p class="comment_time">2017-03-28</p>
+              </div>
+            </mt-loadmore>
+          </div>
+        </div>
+      </transition>
+      <transition name="slide">
+        <div class="comment" v-show="show == '3'">
+          <div class="ev_comment kuai">
+            <div class="tx">
+              <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="36" height="36">
+            </div>
+            <div class="user_new">
+              <span>灭世邪神</span>
+              <span class="user_lv">青铜会员</span>
+              <span class="user_vip">
+                <i>vip</i>
+              </span>
+              <span class="user_author"><i>作者</i></span>
+            </div>
+            <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
+            <p class="comment_time">2017-03-28</p>
+            <p class="duanluo">
+              【第九章 终极幽灵要】
+              <span>可沈飞转念一想，这劣药大笔可不是平时的啊阿达安抚安抚是否啊</span>
+            </p>
+          </div>
+        </div>
+      </transition>
       <div class="fb" v-show="showSth" @touchmove.prevent @click="showfb">
         <div class="dise" @click.stop="">
           <input type="text" class="bt" placeholder="标题（选填）">
@@ -209,6 +281,30 @@
       margin-right 18px
       height 24px
       color black
+.slide-enter-active
+  transition: all .3s ease;
+.slide-leave-active
+  transition: all .3s ease;
+.slide-enter, .slide-leave-to
+  transform: translateX(-100%)
+.slide-enter-active
+  transition: all .3s ease;
+.slide-leave-active
+  transition: all .3s ease;
+.slide-enter, .slide-leave-to
+  transform: translateX(-100%)
+.slide-enter-active
+  transition: all .3s ease;
+.slide-leave-active
+  transition: all .3s ease;
+.slide-enter, .slide-leave-to
+  transform: translateX(-100%)
+.slide-enter-active
+  transition: all .3s ease;
+.slide-leave-active
+  transition: all .3s ease;
+.slide-enter, .slide-leave-to
+  transform: translateX(-100%)
 .fb
   width 100%
   height 100%

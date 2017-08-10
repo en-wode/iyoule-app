@@ -1,6 +1,6 @@
 <template lang="html">
-    <div>
-      <ul class="catalog">
+    <div class="catalog">
+      <ul>
         <li @click="$router.push({path:'/bookread'})"><span>•</span>第一张 将上官玉送人</li>
         <li><span>•</span>第一张 将上官玉送人</li>
         <li><span>•</span>第一张 将上官玉送人</li>
@@ -36,6 +36,6 @@
 </style>
 
 <script type="text/ecmascript-6">
-    export default{
-    }
+  export default{
+  }
 </script>

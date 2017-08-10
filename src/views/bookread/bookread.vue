@@ -13,7 +13,7 @@
               <li @click="tip('设置成功')"><i class="icon-update"></i>更新提醒</li>
               <li @click="tip('添加成功')"><i class="icon-mark"></i>添加书签</li>
               <li><i class="icon-subscription"></i>自动订阅</li>
-              <li><i class="icon-share2"></i>分享</li>
+              <li @click="showfx1"><i class="icon-share2"></i>分享</li>
               <li><i class="icon-notion"></i>显示想法</li>
               <li @click="$router.push({path:'/warn',query:{book:'warn'}})"><i class="icon-chapter_wrong"></i>章节报错</li>
             </ul>
@@ -186,9 +186,13 @@
           <p class="wd9 tip">开通VIP立享折扣优惠！</p>
         </div>
       </div>
+      <transition name="slide">
+        <share  v-show="fx" @hidefx="hideffx1"></share>
+      </transition>
     </div>
 </template>
 <script type="text/ecmascript-6">
+  import share from '../../components/share/share'
   import $ from 'jquery'
   import { Toast } from 'mint-ui'
   export default{
@@ -205,8 +209,12 @@
         shezhi2: false,
         shezhi1: true,
         value1: false,
-        zhangjie: false
+        zhangjie: false,
+        fx: false
       }
+    },
+    components: {
+      share
     },
     methods: {
       toggle1: function (select) {
@@ -262,6 +270,13 @@
           return
         }
         this.chapterValue++
+      },
+      showfx1 () {
+        this.fx = true
+        this.show1 = false
+      },
+      hideffx1: function (fx) {
+        this.fx = fx
       }
     },
     mounted () {
@@ -290,8 +305,8 @@
       top 0
       left 0
       width 100%
-      height 44px
-      line-height 44px
+      height 55px
+      line-height 55px
       .buy
         color #ec4848
         border 1px solid #ec4848
@@ -301,7 +316,7 @@
         margin-right 20px
       i
         color white
-        font-size 20px
+        font-size 18px
         vertical-align: middle;
     .head_caozuo
       width 40%
@@ -310,6 +325,9 @@
       top 44px
       background #2e2727
       li
+        height 44px
+        line-height 44px
+        font-size 14px
         border-1px(rgba(245,240,240,0.2))
         i
           padding 6px
@@ -577,7 +595,14 @@
         height 30px
         color #ff4c4c
         margin-bottom 20px
-
+    .shareall
+      top 0px
+    .slide-enter-active
+      transition: all .3s ease;
+    .slide-leave-active
+      transition: all .3s ease;
+    .slide-enter
+      transform: translateY(100px)
 
 </style>
 

@@ -3,8 +3,10 @@
     <transition name="slide">
       <personal v-if="show" @hide='onShow'></personal>
     </transition>
-    <fbpl v-if="show2" @hidepl='ishowpl'></fbpl>
-    <hfpl v-if="show3" @hidepl2='ishowpl2'></hfpl>
+    <transition name="slide-fade">
+      <fbpl v-if="show2" @hidepl='ishowpl'></fbpl>
+      <hfpl v-if="show3" @hidepl2='ishowpl2'></hfpl>
+    </transition>
     <d-head v-if="this.$route.query.bang||this.$route.query.book" @isshowpl="ishowpl"></d-head>
     <div v-else>
       <v-head v-if="this.$route.query.class"></v-head>
@@ -18,7 +20,11 @@
       <li><span class="down">全本下载</span></li>
     </div>
       <v-bottom v-if="this.$route.query.book == null"></v-bottom>
-    <share @hidefx="hideffx" v-show="show4"></share>
+    <div class="fxd">
+      <transition name="slide">
+        <share @hidefx="hideffx" v-show="show4"></share>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -29,6 +35,12 @@
     transition: all .3s ease;
   .slide-enter, .slide-leave-to
     transform: translateX(-100%)
+  .slide-fade-enter-active,.slide-fade-leave-active
+    transition: all .3s ease;
+    tansition: opacity .5s
+  .slide-fade-enter
+    transform: translateY(-100px)
+    opacity 0
   .bottom
     position fixed
     left 0
@@ -55,6 +67,13 @@
         height 22px
         line-height 22px
         margin-top 12px
+  .fxd
+    .slide-enter-active
+      transition: all .2s ease;
+    .slide-leave-active
+      transition: all 0s ease;
+    .slide-enter, .slide-leave-to
+      transform: translateY(60px)
 </style>
 
 <script type="text/ecmascript-6">
