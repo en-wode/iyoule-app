@@ -2,7 +2,7 @@
     <div class="qiandao">
       <div class="tishi"></div>
       <div class="qian_total">
-        <div class="yiqian"></div>
+        <div class="yiqian qday1"></div>
         <img src="../../views/qiandao/flos.png" alt="" width="40" height="32">
       </div>
       <div class="tian">
@@ -65,7 +65,8 @@
         </ul>
       </div>
       <div class="qian">
-        <img src="../../views/qiandao/qian.png" alt="" width="80" height="80" @click="tip">
+        <img src="../../views/qiandao/qian.png" alt="" width="80" height="80" @click="tip" v-show="tqian == 1">
+        <img src="../../views/qiandao/yiqian.png" alt="" width="80" height="80"  v-show="tqian == 2">
         <p @click="backHandle">点此返回</p>
       </div>
     </div>
@@ -96,7 +97,7 @@
         right -10px
         top -10px
       .yiqian
-        width 10px
+        width 0
         height 14px
         border-radius 7px
         background #4e4343
@@ -131,12 +132,21 @@
 
 <script type="text/ecmascript-6">
   import { Toast } from 'mint-ui'
+  import $ from 'jquery'
   export default{
+    data () {
+      return {
+        tqian: '1',
+        tday: new Date().getDay()
+      }
+    },
     methods: {
       backHandle () {
         this.$router.back()
       },
       tip () {
+        this.tqian = 2
+        $('.yiqian').css('width', '+=14%')
         Toast('签到成功')
       }
     }

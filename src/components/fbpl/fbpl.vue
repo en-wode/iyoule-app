@@ -13,7 +13,7 @@
     width 100%
     height 100%
     background rgba(140,140,140,0.5)
-    position absolute
+    position fixed
     top 55px
     left 0
     z-index: 100
