@@ -31,7 +31,7 @@
       <div class="buy_show" v-show="show2">
         <div class="border_bottom">
           <div class="chapter">
-            <h2>沙海合集 <span class="fr">✘</span></h2>
+            <h2>沙海合集 <span class="fr" @click="toggle1('show2')">✘</span></h2>
             <div class="vipchapter">
               <p @click="brbuy('0')" :class="buynum === '0'?'kit_red':''"><a href="#" class="fl" @click="buyzhangj">-</a>{{buyzhang}}章 <a href="#" class="fr" @click="buyzhangz">+</a></p>
               <p @click="brbuy('40')" :class="buynum === '40'?'kit_red':''">40章  <i class="icon-bq"></i><span class="discount">8.5折</span></p>
@@ -55,9 +55,9 @@
       </div>
       <div class="dashang" v-show="show3">
         <ul>
-          <li>打赏红包</li>
-          <li>送鲜花</li>
-          <li>投月票</li>
+          <li @click="$router.push({path:'/operation',query:{book:'gift'}})">打赏红包</li>
+          <li @click="$router.push({path:'/flower',query:{book:'flower'}})">送鲜花</li>
+          <li @click="$router.push({path:'/operation',query:{book:'yuep'}})">投月票</li>
         </ul>
       </div>
       <div class="book_bottom" v-show="show1 && show5 === false && show3 === false">
@@ -227,6 +227,7 @@
           this.show3 = false
           this.show4 = false
           this.show5 = false
+          $('.book_detail').css('opacity', '0')
         }
         if (select === 'show4') {
           this.show4 = !this.show4

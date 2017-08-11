@@ -7,13 +7,13 @@
         <mt-field placeholder="输入验证码">
           <div style="" class="yzcode">获取验证码</div>
         </mt-field>
-        <input type="button" value="确定" class="inputall" >
+        <input type="button" value="登录" class="inputall" >
         <p @click="login('account')">账号密码登录</p>
       </div>
       <div v-if="loginin == 'account'" class="password">
-        <input type="text" class="nemail" placeholder="请输入旧密码">
-        <input type="text" class="nemail new" placeholder="请输入新密码">
-        <input type="button" value="确定" class="inputall" >
+        <input type="text" class="nemail" placeholder="请输入账号">
+        <input type="text" class="nemail new" placeholder="请输入密码">
+        <input type="button" value="登录" class="inputall" >
         <p @click="login('phone')">手机号登录</p>
       </div>
     </div>
