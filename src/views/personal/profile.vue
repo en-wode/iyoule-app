@@ -7,7 +7,7 @@
         <p >头像<span class="fr">蹦擦蹦擦蹦擦擦<i class="icon-arrow"></i></span></p>
         <p @click="$router.push({path:'/ziliao',query:{bang:'name'}})">昵称<span class="fr">蹦擦蹦擦蹦擦擦<i class="icon-arrow"></i></span></p>
         <p @click="$router.push({path:'/ziliao',query:{bang:'sex'}})">性别<span class="fr">男<i class="icon-arrow"></i></span></p>
-        <mt-button @click.native="open('picker')" size="large"><span class="fl">生日</span><span class="fr">{{value.toLocaleString()}}<i class="icon-arrow"></i></span></mt-button>
+        <mt-button @click.native="open('picker')" size="large"><span class="fl">生日</span><span class="fr">{{value.toLocaleString().split(' ')[0]}}<i class="icon-arrow"></i></span></mt-button>
         <p @click="$router.push({path:'/ziliao',query:{bang:'email'}})">绑定邮箱<span class="fr">381527994@qq.com<i class="icon-arrow"></i></span></p>
         <p @click="$router.push({path:'/ziliao',query:{bang:'phone'}})">绑定手机<span class="fr">159*****3366<i class="icon-arrow"></i></span></p>
         <p @click="$router.push({path:'/ziliao',query:{bang:'password'}})">修改密码<span class="fr">88888888<i class="icon-arrow"></i></span></p>
@@ -47,7 +47,7 @@
       },
       handleChange (value) {
         Toast({
-          message: '已选择 ' + value.toLocaleString(),
+          message: '已选择 ' + value.toLocaleString().split(' ')[0],
           position: 'bottom'
         })
       }
@@ -58,7 +58,7 @@
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   @import "../../common/stylus/mixin.styl"
   .personal
-    margin-top 56px
+    padding-top 56px
     width  100%
     left 0
     overflow hidden

@@ -81,13 +81,15 @@
         wrapperHeight: 0,
         translate: 0,
         moveTranslate: 0,
-        list: []
+        list: [],
+        bottomStatus: ''
       }
     },
     methods: {
       handleTopChange (status) {
         this.moveTranslate = 1
         this.topStatus = status
+        this.bottomStatus = status
       },
       translateChange (translate) {
         const translateNum = +translate

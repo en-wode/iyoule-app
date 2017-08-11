@@ -16,12 +16,19 @@
         <input type="button" value="登录" class="inputall" >
         <p @click="login('phone')">手机号登录</p>
       </div>
+      <div class="another">
+        <ul>
+          <li class="icon-weibo"></li>
+          <li class="icon-weixin"></li>
+          <li class="icon-QQ"></li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
-  .email,.name,.phone,.password
+  .name,.phone,.password
     .nemail
       border 1px solid #998282
       display block
@@ -50,6 +57,17 @@
       font-size 14px
       border-radius 4px
       color white
+  .another
+    margin 60px auto
+    ul
+      width 80%
+      margin 0 auto
+      text-align center
+      display flex
+      li
+        flex 1
+        font-size 40px
+        color #b3aaaa
 </style>
 
 <script type="text/ecmascript-6">

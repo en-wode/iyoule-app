@@ -20,7 +20,7 @@
             <li @click="zhifu2(2)" :class="this.qzhifutotal[2].showtotal? 'kit_red':''" >1000有乐币</li>
             <li @click="zhifu2(3)" :class="this.qzhifutotal[3].showtotal? 'kit_red':''">5000有乐币</li>
             <li @click="zhifu2(4)" :class="this.qzhifutotal[4].showtotal? 'kit_red':''">10000有乐币</li>
-            <li :class="this.qzhifutotal[5].showtotal? 'kit_red':''" @click="zhifu2(5)"><input type="text" value="其他"></li>
+            <li :class="this.qzhifutotal[5].showtotal? 'kit_red':''" @click="zhifu2(5)"><input type="text" value="" placeholder="其他"></li>
           </ul>
           <p><i class="icon-deposit"></i><span class="red">100</span>元 = <span class="red">10000</span>有乐币</p>
           <input type="button" value="确认充值" class="cz" @click="tip">
