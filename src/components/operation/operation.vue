@@ -21,15 +21,15 @@
       <div class="num rank border_bottom">
         <p><span>还差4票超过前一名</span> <span class="fr">剩余月票:0票</span></p>
         <ul>
-          <li>1票</li>
-          <li>5票</li>
-          <li>10票</li>
-          <li>50票</li>
-          <li>
+          <li @click="tp('1')" :class="dashang === '1'? 'red':''">1票</li>
+          <li :class="dashang === '5'?'red':''"  @click="tp('5')">5票</li>
+          <li @click="tp('10')" :class="dashang === '10'? 'red':''">10票</li>
+          <li @click="tp('50')" :class="dashang === '50'? 'red':''">50票</li>
+          <li @click="tp('pre')" :class="dashang === 'pre'? 'red':''">
             <span class="ticket">4票</span>
             <span>（超过前一名）</span>
           </li>
-          <li>
+          <li @click="tp('one')" :class="dashang === 'one'? 'red':''">
             <span class="ticket">5682票</span>
             <span>（成为粉丝第一）</span>
           </li>
@@ -100,11 +100,9 @@
       border 1px solid #a99593
       span
         font-size 12px
-        color #a99593
         display block
         line-height 12px
       .ticket
-        color black
         margin 10px 0 10px 0
       &:nth-child(2)
         margin  0 12px 0 12px
@@ -142,5 +140,15 @@
 
 <script type="text/ecmascript-6">
     export default{
+      data () {
+        return {
+          dashang: '1'
+        }
+      },
+      methods: {
+        tp (num) {
+          this.dashang = num
+        }
+      }
     }
 </script>

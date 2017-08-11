@@ -33,7 +33,7 @@
           <div class="chapter">
             <h2>沙海合集 <span class="fr">✘</span></h2>
             <div class="vipchapter">
-              <p><a href="" class="fl">-</a>20章 <a href="" class="fr">+</a></p>
+              <p><a href="#" class="fl" @click="buyzhangj">-</a>{{buyzhang}}章 <a href="#" class="fr" @click="buyzhangz">+</a></p>
               <p>20章 <span class="discount">8.5折</span></p>
               <p>20章</p>
               <p>20章</p>
@@ -120,7 +120,7 @@
               <span>系统</span>
             </div>
           </div>
-          <div class="font"><a href="#">A-</a><span>58</span><a href="#">A+</a><span class="fr lt">字体</span></div>
+          <div class="font"><a href="#" @click="fontj">A-</a><span>{{fontsz}}</span><a href="#" @click="fontz">A+</a><span class="fr lt">字体</span></div>
           <div class="background">
             <li>
               <span>✔</span>
@@ -138,10 +138,10 @@
         </div>
         <div class="fen2" v-show="shezhi2">
           <div class="space">
-            <li ><i class="icon-space_big"></i></li>
-            <li ><i class="icon-space_middle"></i></li>
-            <li><i class="icon-space_small"></i></li>
-            <li ><i class="icon-dege"></i></li>
+            <li @click="spaceg('big')"><i class="icon-space_big"></i></li>
+            <li @click="spaceg('middle')"><i class="icon-space_middle"></i></li>
+            <li @click="spaceg('small')"><i class="icon-space_small"></i></li>
+            <li @click="spaceg"><i class="icon-dege"></i></li>
           </div>
           <div class="mode">
             <li >
@@ -210,7 +210,9 @@
         shezhi1: true,
         value1: false,
         zhangjie: false,
-        fx: false
+        fx: false,
+        fontsz: 16,
+        buyzhang: 20
       }
     },
     components: {
@@ -277,6 +279,41 @@
       },
       hideffx1: function (fx) {
         this.fx = fx
+      },
+      fontz () {
+        if (this.fontsz > 26) {
+          return
+        }
+        this.fontsz++
+        $('.book_contain').css('font-size', this.fontsz)
+        $('.book_contain').css('line-height', this.fontsz + 8 + 'px')
+      },
+      fontj () {
+        if (this.fontsz < 12) {
+          return
+        }
+        this.fontsz--
+        $('.book_contain').css('font-size', this.fontsz)
+      },
+      buyzhangj () {
+        if (this.buyzhang === 1) {
+          return
+        }
+        this.buyzhang--
+      },
+      buyzhangz () {
+        this.buyzhang++
+      },
+      spaceg (jj) {
+        if (jj === 'big') {
+          $('.book_contain').css('line-height', this.fontsz + 20 + 'px')
+        }
+        if (jj === 'small') {
+          $('.book_contain').css('line-height', this.fontsz + 10 + 'px')
+        }
+        if (jj === 'middle') {
+          $('.book_contain').css('line-height', this.fontsz + 15 + 'px')
+        }
       }
     },
     mounted () {
@@ -289,6 +326,11 @@
           autoCenter: true
         })
       })
+    },
+    watch: {
+      chapterValue: function () {
+        $('.book_detail').css('opacity', '1')
+      }
     }
   }
 </script>
@@ -340,9 +382,12 @@
     .book_title
       text-align center
     .book_contain
+      -webkit-filter:brightness(25%);
+      filter:brightness(25%)
       width 90%
-      margin 0 auto
+      margin 8px auto
       line-height 24px
+      height 85%
     .buy_show
       position absolute
       width 100%
@@ -421,6 +466,7 @@
       left 0
       z-index 99
       .book_detail
+        opacity: 0;
         position absolute
         width 40%
         left 30%
