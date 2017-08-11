@@ -64,6 +64,7 @@
             score: '评分榜',
             ticket: '月票榜',
             reward: '打赏榜',
+            login: '登录',
             proflie: '个人资料',
             recharge: '充值',
             czrecords: '充值记录',

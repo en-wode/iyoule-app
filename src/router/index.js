@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import main from '../views/class-main'
 import profile from '../views/personal/profile'
+import login from '../views/personal/login'
 import recharge from '../views/personal/recharge'
 import czrecords from '../views/personal/czrecords'
 import personnew from '../views/personal/person_new'
@@ -117,6 +118,10 @@ let router = new VueRouter({
           component: more
         }
       ]
+    },
+    {
+      path: '/login',
+      component: login
     },
     {
       path: '/profile',

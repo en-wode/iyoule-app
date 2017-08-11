@@ -11,7 +11,7 @@
           <p class="user_name">蹦擦蹦擦蹦擦擦</p>
         </div>
         <div>
-          <a class="login_in">点击登录</a>
+          <a class="login_in" @click="$router.push({path:'/login',query:{bang:'login'}})">点击登录</a>
         </div>
       </div>
       <div class="border_bottom consume">
