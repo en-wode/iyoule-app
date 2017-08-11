@@ -3,11 +3,16 @@
     <div class="personal">
       <div class="head border_bottom" >
         <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="82" height="82" @click="$router.push({path:'/profile',query:{bang:'proflie'}})">
-        <div class="level">
-          <span class="fl">vip</span>
-          <span class="fr">黑铁会员</span>
+        <div hidden>
+          <div class="level">
+            <span class="fl">vip<img src="../../views/personal/crown.png" alt="" width="12" height="12"></span>
+            <span class="fr">黑铁会员</span>
+          </div>
+          <p class="user_name">蹦擦蹦擦蹦擦擦</p>
         </div>
-        <p class="user_name">蹦擦蹦擦蹦擦擦</p>
+        <div>
+          <a class="login_in">点击登录</a>
+        </div>
       </div>
       <div class="border_bottom consume">
         <p @click="$router.push({path:'/recharge',query:{bang:'recharge'}})"><i class="icon-deposit"></i>充值 <span class="fr"><i class="icon-arrow"></i></span></p>
@@ -77,6 +82,9 @@
           width 50%
           margin 0 auto 9px auto
           height 18px
+          img
+            margin: 0;
+            float: right;
           span
             border-radius 4px
             text-align center
@@ -88,6 +96,14 @@
         .user_name
           margin-top 10px
           text-align center
+        .login_in
+          font-size 14px
+          border 1px solid #7e8c8d
+          padding 4px 8px
+          width 56px
+          display block
+          margin 0 auto
+          border-radius 4px
       .consume
         width 100%
         p

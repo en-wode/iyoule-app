@@ -33,10 +33,10 @@
           <div class="chapter">
             <h2>沙海合集 <span class="fr">✘</span></h2>
             <div class="vipchapter">
-              <p><a href="#" class="fl" @click="buyzhangj">-</a>{{buyzhang}}章 <a href="#" class="fr" @click="buyzhangz">+</a></p>
-              <p>20章 <span class="discount">8.5折</span></p>
-              <p>20章</p>
-              <p>20章</p>
+              <p @click="brbuy('0')" :class="buynum === '0'?'kit_red':''"><a href="#" class="fl" @click="buyzhangj">-</a>{{buyzhang}}章 <a href="#" class="fr" @click="buyzhangz">+</a></p>
+              <p @click="brbuy('40')" :class="buynum === '40'?'kit_red':''">40章  <i class="icon-bq"></i><span class="discount">8.5折</span></p>
+              <p @click="brbuy('60')" :class="buynum === '60'?'kit_red':''">60章</p>
+              <p @click="brbuy('1')" :class="buynum === '1'?'kit_red':''">80章</p>
             </div>
             <p><i class="icon-help"></i>批量购买规则</p>
           </div>
@@ -138,7 +138,7 @@
         </div>
         <div class="fen2" v-show="shezhi2">
           <div class="space">
-            <li @click="spaceg('big')"><i class="icon-space_big"></i></li>
+            <li @click="spaceg('big')" ><i class="icon-space_big"></i></li>
             <li @click="spaceg('middle')"><i class="icon-space_middle"></i></li>
             <li @click="spaceg('small')"><i class="icon-space_small"></i></li>
             <li @click="spaceg"><i class="icon-dege"></i></li>
@@ -212,7 +212,8 @@
         zhangjie: false,
         fx: false,
         fontsz: 16,
-        buyzhang: 20
+        buyzhang: 20,
+        buynum: 40
       }
     },
     components: {
@@ -314,6 +315,9 @@
         if (jj === 'middle') {
           $('.book_contain').css('line-height', this.fontsz + 15 + 'px')
         }
+      },
+      brbuy (chapternum) {
+        this.buynum = chapternum
       }
     },
     mounted () {
@@ -366,6 +370,7 @@
       right 0%
       top 44px
       background #2e2727
+      z-index: 1;
       li
         height 44px
         line-height 44px
@@ -400,16 +405,22 @@
         .vipchapter
           padding 18px 0
           height 130px
+          i
+            position: absolute;
+            color red
+            margin-left: 11px;
+            font-size: 35px;
           .discount
-            transform:rotate(20deg)
-            -ms-transform:rotate(20deg) 	/* IE 9 */
-            -moz-transform:rotate(20deg) 	/* Firefox */
-            -webkit-transform:rotate(20deg) /* Safari 和 Chrome */
-            -o-transform:rotate(20deg)
+            transform:rotate(40deg)
+            -ms-transform:rotate(40deg) 	/* IE 9 */
+            -moz-transform:rotate(40deg) 	/* Firefox */
+            -webkit-transform:rotate(40deg) /* Safari 和 Chrome */
+            -o-transform:rotate(40deg)
             font-size: 12px;
             line-height: 22px;
             position: absolute;
-            margin-left: 14px;
+            margin-left: 18px;
+            color white
           p
             border 1px solid #806c6c
             height 50px
