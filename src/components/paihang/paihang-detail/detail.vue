@@ -19,10 +19,10 @@
       </transition>
       <transition name="slide">
       <div class="select" v-show="shaixuan">
-          <div class="show">状态 <span>连载</span><span>已完结</span> </div>
-          <div class="show">价格 <span>连载</span><span>已完结</span><span>连载</span></div>
-          <div class="show">更新 <span>三天内</span><span>一周内</span></div>
-          <div class="show">字数 <span>50w以下</span><span>50-100w</span></div>
+          <div class="show">状态： <span class="classids" @click="state(0)" :class="stated === 0?'class_act':''">连载</span><span class="classids" @click="state(1)" :class="stated === 1?'class_act':''">已完结</span> </div>
+          <div class="show">价格： <span class="classids" @click="price(0)" :class="priced === 0?'class_act':''">连载</span><span class="classids" @click="price(1)" :class="priced === 1?'class_act':''">已完结</span><span class="classids" @click="price(2)" :class="priced === 2?'class_act':''">连载</span></div>
+          <div class="show">更新： <span class="classids" @click="update(0)" :class="updated === 0?'class_act':''">三天内</span><span class="classids" @click="update(1)" :class="updated === 1?'class_act':''">一周内</span></div>
+          <div class="show">字数： <span class="classids" @click="charnum(0)" :class="charnumd === 0?'class_act':''">50w以下</span><span class="classids" @click="charnum(1)" :class="charnumd === 1?'class_act':''">50-100w</span></div>
         </div>
       </transition>
     </div>
@@ -73,7 +73,11 @@
       return {
         bang: bang,
         paixu: false,
-        shaixuan: false
+        shaixuan: false,
+        stated: 0,
+        priced: 0,
+        updated: 0,
+        charnumd: 0
       }
     },
     methods: {
@@ -89,6 +93,18 @@
       hidpx () {
         this.paixu = false
         this.shaixuan = false
+      },
+      state (active) {
+        this.stated = active
+      },
+      price (active) {
+        this.priced = active
+      },
+      update (active) {
+        this.updated = active
+      },
+      charnum (active) {
+        this.charnumd = active
       }
     }
   }
@@ -138,6 +154,14 @@
             font-size 12px
             display inline-block
             margin-left 20px
+          .classids
+            border: 1px solid #a59898;
+            padding: 0 6px;
+            border-radius 4px
+            line-height: 20px;
+          .class_act
+            border: 1px solid red;
+            color red
     ul
       padding-bottom 24px
       width 90%

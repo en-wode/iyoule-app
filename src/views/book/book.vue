@@ -136,7 +136,7 @@
         text-align right
         width 40px
         line-height 18px
-        margin 0 auto
+        margin-left: 10px;
         &:first-child
           border-bottom 1px solid white
         span
