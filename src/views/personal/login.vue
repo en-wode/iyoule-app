@@ -18,7 +18,7 @@
       </div>
       <div class="another">
         <ul>
-          <li class="icon-weibo"></li>
+          <li class="icon-weibo" @click="qq"></li>
           <li class="icon-weixin"></li>
           <li class="icon-QQ"></li>
         </ul>
@@ -86,6 +86,9 @@
       login (way) {
         this.loginin = way
         Toast('修改成功')
+      },
+      qq () {
+        window.location.href = 'http://m.iyoule.com/yonghu/denglu.html'
       }
     }
   }
