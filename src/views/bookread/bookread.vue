@@ -323,7 +323,7 @@
     },
     mounted () {
       this.$nextTick(() => {
-        $('.mode').click({
+        $('.mode').turn({
           width: 922,
           height: 600,
           elevation: 50,

@@ -26,15 +26,16 @@
   .catalog
     width 100%
     li
-      width 90%
       margin 0 auto
       border-1px(rgba(245,240,240,0.9))
       line-height 45px
+      padding: 0 20px;
+      &:hover
+        background-color #f0f0f0
       span
         color #e6dada
         margin-right 10px
 </style>
-
 <script type="text/ecmascript-6">
   export default{
   }

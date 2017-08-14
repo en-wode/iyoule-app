@@ -149,13 +149,15 @@
         margin-right 8px
   .book_handle
     display flex
-    padding 6px 0
     li
+      padding: 6px 0;
       float left
       flex 1
       height 48px
       text-align center
       line-height 22px
+      &:hover
+        background-color: #f0f0f0;
       i
         font-size 20px
         display inline-block
