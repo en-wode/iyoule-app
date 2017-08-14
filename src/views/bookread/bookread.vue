@@ -193,8 +193,8 @@
 </template>
 <script type="text/ecmascript-6">
   import share from '../../components/share/share'
-  import $ from 'jquery'
   import { Toast } from 'mint-ui'
+  import $ from 'jquery'
   export default{
     data: function () {
       return {
@@ -323,7 +323,7 @@
     },
     mounted () {
       this.$nextTick(() => {
-        $('.mode').turn({
+        $('.mode').click({
           width: 922,
           height: 600,
           elevation: 50,

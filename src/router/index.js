@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Jquery from 'jquery'
 import VueRouter from 'vue-router'
 import main from '../views/class-main'
 import profile from '../views/personal/profile'
@@ -39,6 +40,7 @@ import '../common/stylus/index.styl'
 
 Vue.use(VueRouter)
 Vue.prototype.$http = Axios
+Vue.prototype.$ = Jquery
 
 let router = new VueRouter({
   mode: 'history',
