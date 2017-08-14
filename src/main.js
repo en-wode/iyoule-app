@@ -15,3 +15,8 @@ new Vue({
   template: '<App/>',
   render: h => h(App)
 })
+
+document.addEventListener('contextmenu', event => {
+  event.preventDefault()
+  event.stopPropagation()
+})
