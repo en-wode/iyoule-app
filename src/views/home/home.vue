@@ -128,11 +128,12 @@
       height 55px
       box-shadow 0 0 5px 2px #e0e0e0
       margin 24px auto 0 auto
+      img
+        vertical-align: 8px;
       p
         font-size 13px
         display inline-block
         width 185px
-        vertical-align: bottom;
         span
           display inline-block
           line-height 18px
@@ -140,14 +141,14 @@
             color #a08c8c
             margin-top 2px
       input
-        padding 5px
+        padding 6px
         color white
         background #ff4c4c
         border-radius 2px
-        margin-left 20px
-        vertical-align: -6px;
+        float right
+        margin 8px
     .home_contain
-      width 89%
+      width 96%
       margin 24px auto
       display flex
       ul

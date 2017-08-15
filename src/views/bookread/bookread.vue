@@ -38,7 +38,7 @@
               <p @click="brbuy('60')" :class="buynum === '60'?'kit_red':''">60章</p>
               <p @click="brbuy('1')" :class="buynum === '1'?'kit_red':''">80章</p>
             </div>
-            <p><i class="icon-help"></i>批量购买规则</p>
+            <p class="fl"><i class="icon-help"></i>批量购买规则</p>
           </div>
         </div>
         <div class="border_bottom">
@@ -402,7 +402,7 @@
       z-index 100
       background white
       .chapter
-        padding 18px
+        padding 18px 18px 32px 18px
         .vipchapter
           padding 18px 0
           height 130px
@@ -426,15 +426,15 @@
             border 1px solid #806c6c
             height 50px
             display inline-block
-            width 35%
+            width 120px
             float left
             text-align center
             line-height 50px
             border-radius 4px
             margin-bottom 20px
             padding 2px 8px
-            &:nth-child(1),&:nth-child(3)
-              margin-right 18%
+            &:nth-child(2),&:nth-child(4)
+              float: right;
       .price
         padding 18px
         .old
@@ -662,5 +662,16 @@
     .slide-enter
       transform: translateY(100px)
 
+  @media screen and (max-width: 320px)
+    .book_read
+      .shezhi
+        .font
+          a,span
+            line-height 28px
+            height 28px
+            display inline-block
+            text-align center
+            width 60px
+            margin-top 10px
 </style>
 

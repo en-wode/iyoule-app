@@ -86,7 +86,7 @@
     width 100%
     border-bottom 8px solid #f5f0f0
     ul
-      width 90%
+      width 96%
       margin 16px auto
       display flex
       font-size 14px

@@ -36,6 +36,7 @@
     box-shadow 0px 0px 7px 2px #bfbfbf
     .wd9
       padding-top 10px
+      font-size 14px
       p
         line-height 38px
         border-1px(rgba(245,240,240,0.8))
