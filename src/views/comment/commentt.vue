@@ -253,7 +253,7 @@
     color #998282
 .com_hot
   ul
-    width 90%
+    width 93%
     margin 0 auto
     padding 8px 0
     li
