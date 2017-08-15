@@ -2,7 +2,7 @@
     <div class="ys">
       <div class="topic" @click="$router.push({path:'/topic-content',query:{bang:'content'}})" v-for="item in list">
         <h2>一起成功：不仅有颜值还有才气</h2>
-        <img v-lazy="item" width="330" height="100">
+        <img v-lazy="item" width="100%" height="100">
       </div>
 <!--      <div class="topic" @click="$router.push({path:'/topic-content',query:{bang:'content'}})">
         <h2>一起成功：不仅有颜值还有才气</h2>
@@ -34,10 +34,14 @@
       padding 14px 0
       font-size 14px
     image [lazy=loading] {
-      width 330px
+      width 100%
       height 100px
     }
-
+  @media screen and (max-width: 320px)
+    .topic
+      img
+        width 100%
+        height 88px
 </style>
 
 <script type="text/ecmascript-6">

@@ -13,65 +13,98 @@
       <div class="home_contain" ref="home_contain">
         <ul>
           <li @click="$router.push({path:'/book',query:{book:'book'}})">
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市</span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市</span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市</span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市asd a </span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市asd a </span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市asd a </span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市asd a </span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市asd a </span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市asd a </span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市asd a </span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市asd a </span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市asd a </span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市asd a </span>
           </li>
           <li>
-            <img src="../home/baser_cover.png" alt="" width="88" height="110">
+            <img src="../home/baser_cover.png" alt="" width="88" height="110" class="sm-img">
             <span class="book_name">重生之龙在都市asd a </span>
           </li>
         </ul>
       </div>
     </div>
 </template>
+
+<script type="text/ecmascript-6">
+  import { Toast } from 'mint-ui'
+  export default {
+    props: {
+      homebook: {
+        type: Object
+      }
+    },
+    data () {
+      return {
+        projects: [],
+        qd: true
+      }
+    },
+    created () {
+      this.$http.get('http://easy-mock.com/mock/598a7ddda1d30433d85a4cd2/example_1502248413615/query')
+        .then(function (response) {
+          this.projects = response.data.data
+          console.log(response)
+          console.log(this.projects)
+        }.bind(this))
+        .catch(function (error) {
+          console.log(error)
+        })
+    },
+    methods: {
+      tip () {
+        Toast('签到成功')
+      }
+    }
+  }
+</script>
 
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   .slide-fade-enter-active
@@ -113,7 +146,6 @@
         border-radius 2px
         margin-left 20px
         vertical-align: -6px;
-        padding: 8px;
     .home_contain
       width 89%
       margin 24px auto
@@ -139,37 +171,13 @@
             text-overflow ellipsis;
             white-space nowrap;
 
+  @media screen and (max-width: 320px)
+    .contain
+      .qiandao-tip
+        height 52px
+        input
+            margin-left 0px
+            font-size 12px
 </style>
 
-<script type="text/ecmascript-6">
-  import { Toast } from 'mint-ui'
-  export default {
-    props: {
-      homebook: {
-        type: Object
-      }
-    },
-    data () {
-      return {
-        projects: [],
-        qd: true
-      }
-    },
-    created () {
-      this.$http.get('http://easy-mock.com/mock/598a7ddda1d30433d85a4cd2/example_1502248413615/query')
-        .then(function (response) {
-          this.projects = response.data.data
-          console.log(response)
-          console.log(this.projects)
-        }.bind(this))
-        .catch(function (error) {
-          console.log(error)
-        })
-    },
-    methods: {
-      tip () {
-        Toast('签到成功')
-      }
-    }
-  }
-</script>
+

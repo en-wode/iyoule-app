@@ -2,7 +2,7 @@
     <div class="ys">
       <div class="border_bottom">
         <div class="topic">
-          <img src="../../components/topic/top_1.png" alt="" width="330" height="100">
+          <img src="../../components/topic/top_1.png" alt="" width="100%" height="100">
           <h2>一起成功：不仅有颜值还有才气</h2>
           <p>一起成功：不仅有颜值还有才气一起成功：不仅有颜值还有才气一起成功：不仅有颜值还有才气一起成功：不仅有颜值还有才气一起成功：不仅有颜值还有才气一起成功：不仅有颜值还有才气一起成功：不仅有颜值还有才气</p>
         </div>
@@ -25,6 +25,15 @@
       color #807979
       font-size 14px
 
+  @media screen and (max-width: 320px)
+    .topic
+      img
+        width 100%
+        height 88px
+      h2
+        font-size 14px
+      p
+        font-size 12px
 </style>
 
 <script type="text/ecmascript-6">

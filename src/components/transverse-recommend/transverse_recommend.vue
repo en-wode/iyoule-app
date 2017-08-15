@@ -2,15 +2,15 @@
   <div class="transverse">
     <ul>
       <li>
-        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110" class="yiny">
+        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110" class="yiny sm-img">
         <span>超级狂暴吞噬</span>
       </li>
       <li>
-        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110" class="yiny">
+        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110" class="yiny sm-img">
         <span>超级狂暴吞噬</span>
       </li>
       <li>
-        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110" class="yiny">
+        <img src="../../components/vertical-recommend/baser_cover.png" alt="" width="88" height="110" class="yiny sm-img">
         <span>超级狂暴吞噬</span>
       </li>
     </ul>

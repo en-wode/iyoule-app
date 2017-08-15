@@ -15,6 +15,22 @@
   </mt-header>-->
 </template>
 
+<script type="text/ecmascript-6">
+  export default{
+    data: function () {
+      return {
+        isShow: false
+      }
+    },
+    methods: {
+      toggle: function () {
+        this.isShow = !this.isShow
+        this.$emit('selectshow', this.isShow)
+      }
+    }
+  }
+</script>
+
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   .header
     height 55px
@@ -41,20 +57,12 @@
       .search
         flex 0 0 50px
         font-size 32px
+  @media screen and (max-width: 320px)
+    .header
+      ul
+        li
+          &:nth-child(2)
+            width 80%
 </style>
 
-<script type="text/ecmascript-6">
-    export default{
-      data: function () {
-        return {
-          isShow: false
-        }
-      },
-      methods: {
-        toggle: function () {
-          this.isShow = !this.isShow
-          this.$emit('selectshow', this.isShow)
-        }
-      }
-    }
-</script>
+
