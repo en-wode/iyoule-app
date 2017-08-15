@@ -36,20 +36,6 @@
   </div>
 </template>
 
-<script type="text/ecmascript-6">
-  import profile from '../../views/personal/profile.vue'
-  export default {
-    components: {
-      profile
-    },
-    methods: {
-      pers: function () {
-        this.$emit('hide', false)
-      }
-    }
-  }
-</script>
-
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   @import "../../common/stylus/mixin.styl"
   .back
@@ -124,4 +110,31 @@
       height 100%
       overflow hidden
 
+  @media screen and (max-width: 320px)
+    .back
+      .personal
+        .head
+          height 142px
+        .consume
+          p
+            height 38px
+            line-height 38px
+            font-size 14px
+            i
+              font-size 14px
 </style>
+
+<script type="text/ecmascript-6">
+  import profile from '../../views/personal/profile.vue'
+  export default {
+    components: {
+      profile
+    },
+    methods: {
+      pers: function () {
+        this.$emit('hide', false)
+      }
+    }
+  }
+</script>
+

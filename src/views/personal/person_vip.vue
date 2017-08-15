@@ -57,7 +57,8 @@
       p
         color #b6a7a7
         height auto
-        line-height 16px
+        line-height 18px
         margin-top 16px
+        font-size: 14px;
 
 </style>

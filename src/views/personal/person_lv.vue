@@ -92,4 +92,8 @@
           color #b6a7a7
           font-size 14px
 
+  @media screen and (max-width: 320px)
+    .personal
+      .tx
+        padding 18px 0 12px 0
 </style>

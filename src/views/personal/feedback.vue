@@ -34,17 +34,17 @@
       resize:none
       border none
       margin 24px auto
-      width 316px
-      height 160px
+      width 80%
+      height 140px
       background #f5f0f0
       display block
       padding 9px 14px
     .contact
       width 90%
-      margin 0 auto
+      margin 40px auto
       padding 4px 0
       border-1px(rgba(245,240,240,0.9))
       input
-        width 132px
+        width 36%
         height 26px
 </style>

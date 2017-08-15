@@ -113,7 +113,7 @@
   .jilu
     width 100%
     li
-      padding 24px 20px
+      padding 24px 18px
       height 60px
       font-size 14px
       position: relative;
@@ -130,7 +130,7 @@
           color #b6a7a7
       .book_down
         position absolute
-        right 20px
+        right 10px
         top 24px
         font-size 12px
         .dowm_time
