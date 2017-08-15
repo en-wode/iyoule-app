@@ -1,5 +1,5 @@
 <template lang="html">
-    <div class="book_read">
+    <div class="book_read" :class="bgselect === '2'?'background_col2':'' || bgselect === '3'?'background_col3':'' || bgselect === '4'?'background_col4':''" >
       <div class="book_head" v-show="show1">
         <div class="wd9">
           <i class="icon-arrow-left" @click="backHandle"></i>
@@ -123,16 +123,16 @@
           <div class="font"><a href="#" @click="fontj">A-</a><span>{{fontsz}}</span><a href="#" @click="fontz">A+</a><span class="fr lt">字体</span></div>
           <div class="background">
             <li>
-              <span>✔</span>
+              <span class="background_col1" @click="selecbg('1')"><i class="icon-gou red" v-show="bgselect === '1'"></i></span>
             </li>
             <li>
-              <span></span>
+              <span class="background_col2" @click="selecbg('2')"><i class="icon-gou red" v-show="bgselect === '2'"></i></span>
             </li>
             <li>
-              <span></span>
+              <span class="background_col3" @click="selecbg('3')"><i class="icon-gou red" v-show="bgselect === '3'"></i></span>
             </li>
             <li>
-              <span></span>
+              <span class="background_col4" @click="selecbg('4')"><i class="icon-gou red" v-show="bgselect === '4'"></i></span>
             </li>
           </div>
         </div>
@@ -213,7 +213,8 @@
         fx: false,
         fontsz: 16,
         buyzhang: 20,
-        buynum: 40
+        buynum: 40,
+        bgselect: 1
       }
     },
     components: {
@@ -319,6 +320,9 @@
       },
       brbuy (chapternum) {
         this.buynum = chapternum
+      },
+      selecbg (bg) {
+        this.bgselect = bg
       }
     },
     mounted () {
@@ -342,7 +346,18 @@
 
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   @import "../../common/stylus/mixin.styl"
+  .background_col1
+    background #eece9b!important
+  .background_col2
+    background #c4e0c8!important
+  .background_col3
+    background #473a3a!important
+    color white
+  .background_col4
+    background #141c26!important
+    color white
   .book_read
+    filter: brightness(90%);
     background #dfcba9
     min-height 100%
     .book_head
@@ -388,8 +403,6 @@
     .book_title
       text-align center
     .book_contain
-      -webkit-filter:brightness(25%);
-      filter:brightness(25%)
       width 90%
       margin: 8px auto 0px auto;
       padding-bottom 8px
@@ -578,6 +591,14 @@
         height 75px
         li
           flex 1
+          .background_col1
+            background #eece9b
+          .background_col2
+            background #c4e0c8!important
+          .background_col3
+            background #473a3a
+          .background_col4
+            background #141c26
           span
             margin 15px auto
             width 39px
@@ -585,6 +606,9 @@
             display block
             border-radius 50%
             background #eece9b
+            i
+              vertical-align: -11px;
+              margin-left: 11px;
     .fenye
       height 35px
       width 8%
