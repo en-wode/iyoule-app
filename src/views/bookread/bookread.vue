@@ -110,8 +110,8 @@
               <div class="range">
                 <mt-range
                 v-model="rangeValue"
-                :min="1"
-                :max="100"
+                :min="40"
+                :max="140"
                 :step="1"
                 :bar-height="2">
                 </mt-range>
@@ -198,7 +198,7 @@
   export default{
     data: function () {
       return {
-        rangeValue: 1,
+        rangeValue: 60,
         chapterValue: 1,
         show1: false,
         show2: false,
@@ -327,18 +327,17 @@
     },
     mounted () {
       this.$nextTick(() => {
-        $('.mode').click({
-          width: 922,
-          height: 600,
-          elevation: 50,
-          gradients: true,
-          autoCenter: true
-        })
+        $('.book_read').css('filter', 'brightness(' + this.rangeValue + '%)')
+        $('.book_read').css('-webkit-filter', 'brightness(' + this.rangeValue + '%)')
       })
     },
     watch: {
       chapterValue: function () {
         $('.book_detail').css('opacity', '1')
+      },
+      rangeValue: function () {
+        $('.book_read').css('filter', 'brightness(' + this.rangeValue + '%)')
+        $('.book_read').css('-webkit-filter', 'brightness(' + this.rangeValue + '%)')
       }
     }
   }
@@ -357,7 +356,6 @@
     background #141c26!important
     color white
   .book_read
-    filter: brightness(90%);
     background #dfcba9
     min-height 100%
     .book_head
