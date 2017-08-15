@@ -344,10 +344,10 @@
   @import "../../common/stylus/mixin.styl"
   .book_read
     background #dfcba9
-    height 100%
+    min-height 100%
     .book_head
       background #2e2727
-      position absolute
+      position fixed
       color white
       top 0
       left 0
@@ -391,11 +391,12 @@
       -webkit-filter:brightness(25%);
       filter:brightness(25%)
       width 90%
-      margin 8px auto
+      margin: 8px auto 0px auto;
+      padding-bottom 8px
       line-height 24px
       height 85%
     .buy_show
-      position absolute
+      position fixed
       width 100%
       left 0
       bottom 0
@@ -471,7 +472,7 @@
     .book_bottom
       height 120px
       width 100%
-      position absolute
+      position fixed
       background #2e2727
       color white
       bottom 0
@@ -526,7 +527,7 @@
           display block
           font-size 12px
     .shezhi
-      position absolute
+      position fixed
       width 100%
       bottom 0
       left 0

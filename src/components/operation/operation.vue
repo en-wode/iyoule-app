@@ -27,19 +27,23 @@
           <li @click="tp('50')" :class="dashang === '50'? 'red':''">50票</li>
           <li @click="tp('pre')" :class="dashang === 'pre'? 'red':''">
             <span class="ticket">4票</span>
-            <span>（超过前一名）</span>
+            <span>(超过前一名)</span>
           </li>
           <li @click="tp('one')" :class="dashang === 'one'? 'red':''">
             <span class="ticket">5682票</span>
-            <span>（成为粉丝第一）</span>
+            <span>(成为粉丝第一)</span>
           </li>
         </ul>
       </div>
       <div class="jilu">
-        <p>投票：5票（没有足够的月票，100有乐币=1票）</p>
-        <p>余额：0有乐币（没有足够的有乐币）133逗币</p>
+        <p>投票：5票(没有足够的月票，100有乐币=1票)</p>
+        <p>余额：0有乐币(没有足够的有乐币)133逗币</p>
         <input type="button" value="余额不足，请充值">
         <p class="tp_titlt">投票记录</p>
+        <div class="jl_detail">
+          <img src="../../components/operation/baser_cover.png" alt="" width="30" height="30">
+          <span>199***654刚刚投了5票</span>
+        </div>
         <div class="jl_detail">
           <img src="../../components/operation/baser_cover.png" alt="" width="30" height="30">
           <span>199***654刚刚投了5票</span>
@@ -90,7 +94,7 @@
     margin-top 20px
     li
       float left
-      width 30%
+      width 28%
       text-align center
       height 60px
       line-height 60px
@@ -105,9 +109,9 @@
       .ticket
         margin 10px 0 10px 0
       &:nth-child(2)
-        margin  0 12px 0 12px
+        margin: 0 17px 0 17px;
       &:nth-child(5)
-        margin  0 12px 0px 12px
+        margin: 0 17px 0 17px;
 .jilu
   width 90%
   margin 24px auto
@@ -129,9 +133,12 @@
     border-1px(rgba(245,240,240,0.9))
     height 28px
   .jl_detail
+    margin 12px 0 12px
+    padding-bottom 8px
     img
       border-radius 50%
       border 1px solid #bcadad
+      vertical-align -6px
     span
       display inline-block
       height 30px

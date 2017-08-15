@@ -25,7 +25,6 @@
         </div>
       </div>
       <div class="jilu">
-
         <input type="button" value="确认赠送">
         <p class="tp_titlt">赠送记录</p>
         <div class="jl_detail">
@@ -112,16 +111,18 @@
     height 40px
     background #ff4c4c
     color white
-    margin-top 20px
     border-radius 4px
   .tp_titlt
     margin 12px 0 12px 0
     border-1px(rgba(245,240,240,0.9))
     height 28px
   .jl_detail
+    margin 12px 0 12px
+    padding-bottom 8px
     img
       border-radius 50%
       border 1px solid #bcadad
+      vertical-align -4px
     span
       display inline-block
       height 30px
