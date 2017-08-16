@@ -43,7 +43,7 @@
           height 53px
       .search
         flex 0 0 50px
-        font-size 26px
+        font-size 24px
 
 
 </style>

@@ -102,6 +102,7 @@
         img
           margin 25px auto
           border-radius 2px
+          border: 1px solid #e7eaf2;
         p
           text-align left
         .cz
@@ -146,5 +147,9 @@
         height auto
         line-height 24px
         text-indent 1em
-
+  @media screen and (max-width: 320px)
+    .personal
+      .consume
+        .zhifu
+          padding 0
 </style>

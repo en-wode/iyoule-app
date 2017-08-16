@@ -60,6 +60,9 @@
           <li @click="$router.push({path:'/operation',query:{book:'yuep'}})">投月票</li>
         </ul>
       </div>
+      <div class="view">
+        <i class="icon-comment"></i>
+      </div>
       <div class="book_bottom" v-show="show1 && show5 === false && show3 === false">
         <transition name="fade">
           <div class="book_detail">
@@ -198,7 +201,7 @@
   export default{
     data: function () {
       return {
-        rangeValue: 60,
+        rangeValue: 85,
         chapterValue: 1,
         show1: false,
         show2: false,
@@ -480,6 +483,17 @@
           border-1px(rgba(245,240,240,0.8))
           line-height 50px
           height 50px
+    .view
+      position fixed
+      bottom 200px
+      right 28px
+      width 64px
+      height 64px
+      background #2e2727
+      color white
+      border-radius 50%
+      text-align center
+      line-height 64px
     .book_bottom
       height 120px
       width 100%
@@ -696,5 +710,10 @@
             text-align center
             width 60px
             margin-top 10px
+      .view
+        width 56px
+        height 56px
+        line-height 56px
+        bottom 180px
 </style>
 
