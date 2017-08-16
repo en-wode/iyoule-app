@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import Jquery from 'jquery'
 import VueRouter from 'vue-router'
 import main from '../views/class-main'
 import profile from '../views/personal/profile'
@@ -36,15 +35,15 @@ import free from '../components/free/free'
 import topic from '../components/topic/topic'
 import topict from '../components/topic/topic-content'
 import Axios from 'axios'
+import Jquery from 'jquery'
 import '../common/stylus/index.styl'
 
 Axios.defaults.timeout = 5000
 Axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
 Axios.defaults.baseURL = 'http://35.189.165.140:3000/'
 Vue.prototype.$http = Axios
-
-Vue.use(VueRouter)
 Vue.prototype.$ = Jquery
+Vue.use(VueRouter)
 
 let router = new VueRouter({
   mode: 'history',
