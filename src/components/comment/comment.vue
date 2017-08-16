@@ -12,7 +12,7 @@
               <span class="pl">楼主</span>
             </div>
             <p class="kuai">这本书太好看了！1000阅读币红包送上，希望后续更加精彩</p>
-            <p class="comment_time">2017-03-28<i class="icon-zan fr"><span>6</span></i></p>
+            <p class="comment_time">2017-03-28<i class="icon-zan fr" @click="dzan"><span>6</span></i></p>
           </div>
         </div>
       </div>
@@ -53,6 +53,12 @@
 </style>
 
 <script type="text/ecmascript-6">
-    export default{
+  import $ from 'jquery'
+  export default{
+    methods: {
+      dzan () {
+        $('.icon-zan').css('color', 'red')
+      }
     }
+  }
 </script>
