@@ -72,6 +72,29 @@
     </div>
 </template>
 
+<script type="text/ecmascript-6">
+  import { Toast } from 'mint-ui'
+  import $ from 'jquery'
+  export default{
+    data () {
+      return {
+        tqian: '1',
+        tday: new Date().getDay()
+      }
+    },
+    methods: {
+      backHandle () {
+        this.$router.back()
+      },
+      tip () {
+        this.tqian = 2
+        $('.yiqian').animate({width: '+=14%'}, 500)
+        Toast('签到成功')
+      }
+    }
+  }
+</script>
+
 <style lang="stylus" rel="stylesheet/stylus" type="text/stylus" scoped>
   .qiandao
     background-image url("../../views/qiandao/bg.png")
@@ -130,25 +153,4 @@
         color #4e4343
 </style>
 
-<script type="text/ecmascript-6">
-  import { Toast } from 'mint-ui'
-  import $ from 'jquery'
-  export default{
-    data () {
-      return {
-        tqian: '1',
-        tday: new Date().getDay()
-      }
-    },
-    methods: {
-      backHandle () {
-        this.$router.back()
-      },
-      tip () {
-        this.tqian = 2
-        $('.yiqian').css('width', '+=14%')
-        Toast('签到成功')
-      }
-    }
-  }
-</script>
+
