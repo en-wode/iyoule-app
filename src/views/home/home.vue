@@ -88,11 +88,10 @@
       }
     },
     created () {
-      this.$http.get('http://easy-mock.com/mock/598a7ddda1d30433d85a4cd2/example_1502248413615/query')
+      this.$http.get('/ranking/gender')
         .then(function (response) {
           this.projects = response.data.data
           console.log(response)
-          console.log(this.projects)
         }.bind(this))
         .catch(function (error) {
           console.log(error)
