@@ -23,10 +23,26 @@
       <div class="book_tip">
         <span class="fl">《丹武神尊》</span><span class="fr">第二章 战神之旅</span>
       </div>
-      <div class="book_title">第一张 这是标题</div>
-      <div class="book_contain" @click="toggle1('show1')">
-        此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息左右，还是阴森森的笑容。 他的背后站着一排黑衣保镖，一个个膀大腰圆，腰里全都藏匿着武器。 而乌鸦的对面，坐着郭思思、
-        高富帅和贾仁义一伙人，此刻，三人脸色正如六月乌云阴沉。 “郭小姐，高少爷，别这种不痛快的表...
+      <div class="book_contain" @click="fy">
+        <div>
+          <div class="book_title">第一张 这是标题</div>
+          此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息左右，还
+        </div>
+        <div>
+          此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息左右
+        </div>
+        <div>
+          此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息
+        </div>
+        <div>
+          此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息
+        </div>
+        <div>
+          此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息
+        </div>
+        <div>
+          此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息
+        </div>
       </div>
       <div class="buy_show" v-show="show2">
         <div class="border_bottom">
@@ -198,6 +214,7 @@
   import share from '../../components/share/share'
   import { Toast } from 'mint-ui'
   import $ from 'jquery'
+  import 'turn.js'
   export default{
     data: function () {
       return {
@@ -220,6 +237,11 @@
         bgselect: 1
       }
     },
+    created () {
+      var w = $(window).width()
+      var h = $(window).height()
+      $('.turn-page').width(w).height(h)
+    },
     components: {
       share
     },
@@ -231,7 +253,7 @@
           this.show3 = false
           this.show4 = false
           this.show5 = false
-          $('.book_detail').css('opacity', '0')
+          this.$('.book_detail').css('opacity', '0')
         }
         if (select === 'show4') {
           this.show4 = !this.show4
@@ -291,15 +313,15 @@
           return
         }
         this.fontsz++
-        $('.book_contain').css('font-size', this.fontsz)
-        $('.book_contain').css('line-height', this.fontsz + 8 + 'px')
+        this.$('.book_contain').css('font-size', this.fontsz)
+        this.$('.book_contain').css('line-height', this.fontsz + 8 + 'px')
       },
       fontj () {
         if (this.fontsz < 12) {
           return
         }
         this.fontsz--
-        $('.book_contain').css('font-size', this.fontsz)
+        this.$('.book_contain').css('font-size', this.fontsz)
       },
       buyzhangj () {
         if (this.buyzhang === 1) {
@@ -312,13 +334,13 @@
       },
       spaceg (jj) {
         if (jj === 'big') {
-          $('.book_contain').css('line-height', this.fontsz + 20 + 'px')
+          this.$('.book_contain').css('line-height', this.fontsz + 20 + 'px')
         }
         if (jj === 'small') {
-          $('.book_contain').css('line-height', this.fontsz + 10 + 'px')
+          this.$('.book_contain').css('line-height', this.fontsz + 10 + 'px')
         }
         if (jj === 'middle') {
-          $('.book_contain').css('line-height', this.fontsz + 15 + 'px')
+          this.$('.book_contain').css('line-height', this.fontsz + 15 + 'px')
         }
       },
       brbuy (chapternum) {
@@ -326,21 +348,32 @@
       },
       selecbg (bg) {
         this.bgselect = bg
+      },
+      fy () {
+        var w = $(window).width() - 20
+        var h = $(window).height() - 55
+        $('.book_contain').turn({
+          width: w,
+          height: h,
+          display: 'single',
+          acceleration: true,
+          autoCenter: true
+        })
       }
     },
     mounted () {
       this.$nextTick(() => {
-        $('.book_read').css('filter', 'brightness(' + this.rangeValue + '%)')
-        $('.book_read').css('-webkit-filter', 'brightness(' + this.rangeValue + '%)')
+        this.$('.book_read').css('filter', 'brightness(' + this.rangeValue + '%)')
+        this.$('.book_read').css('-webkit-filter', 'brightness(' + this.rangeValue + '%)')
       })
     },
     watch: {
       chapterValue: function () {
-        $('.book_detail').css('opacity', '1')
+        this.$('.book_detail').css('opacity', '1')
       },
       rangeValue: function () {
-        $('.book_read').css('filter', 'brightness(' + this.rangeValue + '%)')
-        $('.book_read').css('-webkit-filter', 'brightness(' + this.rangeValue + '%)')
+        this.$('.book_read').css('filter', 'brightness(' + this.rangeValue + '%)')
+        this.$('.book_read').css('-webkit-filter', 'brightness(' + this.rangeValue + '%)')
       }
     }
   }
@@ -401,14 +434,16 @@
       padding 10px 0
       font-size 12px
       height 15px
-    .book_title
-      text-align center
     .book_contain
-      width 90%
+      width 95%
       margin: 8px auto 0px auto;
       padding-bottom 8px
       line-height 24px
       height 85%
+      .turn-page
+        background-color #dfcba9
+      .book_title
+        text-align center
     .buy_show
       position fixed
       width 100%
