@@ -20,30 +20,47 @@
           </div>
         </div>
       </div>
-      <div class="book_tip">
-        <span class="fl">《丹武神尊》</span><span class="fr">第二章 战神之旅</span>
+     <!--内容显示及分页-->
+      <div class="book_contain" @click="toggle1('show1')">
+        <div>
+          <p class="book_tip">
+            <span class="fl">《丹武神尊》</span><span class="fr">第二章 战神之旅</span>
+          </p>
+          <p class="book_title">第一张 这是标题</p>
+          <p class="page_contain">
+            此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息左右，还sa dasd asd
+          </p>
+        </div>
+        <div>
+          <p class="book_tip">
+            <span class="fl">《丹武神尊》</span><span class="fr">第二章 战神之旅</span>
+          </p>
+          <p class="book_title">第2张 这是标题</p>
+          <p class="page_contain">
+            此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息左右，还sa dasd asd
+          </p>
+        </div>
+        <div>
+          <p class="book_tip">
+            <span class="fl">《丹武神尊》</span><span class="fr">第二章 战神之旅</span>
+          </p>
+          <p class="book_title">第3张 这是标题</p>
+          <p class="page_contain">
+            此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息左右，还sa dasd asd
+          </p>
+        </div>
+        <div>
+          <p class="book_tip">
+            <span class="fl">《丹武神尊》</span><span class="fr">第二章 战神之旅</span>
+          </p>
+          <p class="book_title">第4张 这是标题</p>
+          <p class="page_contain">
+            此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息左右，还sa dasd asd
+          </p>
+        </div>
       </div>
-      <div class="book_contain" @click="fy">
-        <div>
-          <div class="book_title">第一张 这是标题</div>
-          此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息左右，还
-        </div>
-        <div>
-          此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息左右
-        </div>
-        <div>
-          此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息
-        </div>
-        <div>
-          此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息
-        </div>
-        <div>
-          此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息
-        </div>
-        <div>
-          此刻，在辉煌会所，乌鸦正靠在一张大沙发上，手里端着一杯威士忌。 他脸上神情没有被八两金的坏消息
-        </div>
-      </div>
+      <!--内容显示及分页end-->
+      <!--购买书籍-->
       <div class="buy_show" v-show="show2">
         <div class="border_bottom">
           <div class="chapter">
@@ -69,6 +86,8 @@
           <input type="button" value="购买" @click="tip('支付成功')">
         </div>
       </div>
+      <!--购买书籍end-->
+      <!--打赏-->
       <div class="dashang" v-show="show3">
         <ul>
           <li @click="$router.push({path:'/operation',query:{book:'gift'}})">打赏红包</li>
@@ -76,9 +95,13 @@
           <li @click="$router.push({path:'/operation',query:{book:'yuep'}})">投月票</li>
         </ul>
       </div>
-      <div class="view">
+      <!--打赏end-->
+      <!--写想法-->
+      <div class="view" hidden>
         <i class="icon-comment"></i>
       </div>
+      <!--想法-->
+      <!--show1基础设置-->
       <div class="book_bottom" v-show="show1 && show5 === false && show3 === false">
         <transition name="fade">
           <div class="book_detail">
@@ -121,6 +144,8 @@
           </li>
         </div>
       </div>
+      <!--show1基础设置end-->
+      <!--设置书签推送等-->
       <div class="shezhi" v-show="show5">
         <div class="fen1" v-show="shezhi1">
           <div class="light">
@@ -187,6 +212,7 @@
           <div class="fr fen" @click="toggle1('shezhi2')"></div>
         </div>
       </div>
+      <!--设置书签推送等end-->
       <div class="book_dan " v-show="show6">
         <div class="border_bottom">
           <div class="wd9 top">
@@ -348,23 +374,31 @@
       },
       selecbg (bg) {
         this.bgselect = bg
-      },
-      fy () {
-        var w = $(window).width() - 20
-        var h = $(window).height() - 55
-        $('.book_contain').turn({
-          width: w,
-          height: h,
-          display: 'single',
-          acceleration: true,
-          autoCenter: true
-        })
       }
     },
     mounted () {
       this.$nextTick(() => {
         this.$('.book_read').css('filter', 'brightness(' + this.rangeValue + '%)')
         this.$('.book_read').css('-webkit-filter', 'brightness(' + this.rangeValue + '%)')
+        var w = $(window).width()
+        var h = $(window).height() - 8
+        $('.book_contain').turn({
+          width: w,
+          height: h,
+          display: 'single',
+          acceleration: true,
+          elevation: 50,
+          when: {
+            turned: function (e, page) {
+              console.log('Current view: ', $(this).turn('view'))
+            }
+          }
+        })
+        $('.page_contain').mousedown(function () {
+          w = setTimeout(function () {
+            $('.view').show()
+          }, 1000)
+        })
       })
     },
     watch: {
@@ -403,6 +437,7 @@
       width 100%
       height 55px
       line-height 55px
+      z-index: 999
       .buy
         color #ec4848
         border 1px solid #ec4848
@@ -420,7 +455,7 @@
       right 0%
       top 44px
       background #2e2727
-      z-index: 1;
+      z-index: 98;
       li
         height 44px
         line-height 44px
@@ -436,14 +471,17 @@
       height 15px
     .book_contain
       width 95%
-      margin: 8px auto 0px auto;
+      margin: 0 auto
       padding-bottom 8px
       line-height 24px
       height 85%
+      overflow hidden
       .turn-page
         background-color #dfcba9
       .book_title
         text-align center
+      .page_contain
+        padding 0 8px
     .buy_show
       position fixed
       width 100%
@@ -512,6 +550,7 @@
       left 0
       background white
       width 100%
+      z-index 97
       ul
         padding 0 18px
         li
@@ -529,6 +568,7 @@
       border-radius 50%
       text-align center
       line-height 64px
+      z-index 99
     .book_bottom
       height 120px
       width 100%
@@ -592,6 +632,7 @@
       bottom 0
       left 0
       background #2e2727
+      z-index: 99
       p
         text-align center
         color white
